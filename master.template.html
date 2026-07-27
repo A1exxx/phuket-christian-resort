@@ -1,0 +1,864 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Христианский арт-курорт на Пхукете — инвестиционный меморандум</title>
+<style>
+:root{
+  --bg:#F5F1E6; --surface:#FCFAF3; --surface-2:#EDE7D6; --ink:#181C22; --ink-soft:#5A6270;
+  --border:#DCD3BC; --gold:#96712C; --gold-soft:#EFE4C8; --sea:#1D5A5E; --sea-soft:#DCE9E7;
+  --warn:#A24A26; --warn-bg:#F6E4DA; --shadow:0 24px 48px -30px rgba(24,28,34,.35);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1116; --surface:#171C23; --surface-2:#1F2630; --ink:#EDE9DE; --ink-soft:#A0A9B6;
+    --border:#2C3540; --gold:#CBA css; --gold:#C9A961; --gold-soft:#332A16; --sea:#5FA8A2; --sea-soft:#15282A;
+    --warn:#D9855C; --warn-bg:#32211A; --shadow:0 24px 48px -30px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1116; --surface:#171C23; --surface-2:#1F2630; --ink:#EDE9DE; --ink-soft:#A0A9B6;
+  --border:#2C3540; --gold:#C9A961; --gold-soft:#332A16; --sea:#5FA8A2; --sea-soft:#15282A;
+  --warn:#D9855C; --warn-bg:#32211A; --shadow:0 24px 48px -30px rgba(0,0,0,.7);
+}
+:root[data-theme="light"]{
+  --bg:#F5F1E6; --surface:#FCFAF3; --surface-2:#EDE7D6; --ink:#181C22; --ink-soft:#5A6270;
+  --border:#DCD3BC; --gold:#96712C; --gold-soft:#EFE4C8; --sea:#1D5A5E; --sea-soft:#DCE9E7;
+  --warn:#A24A26; --warn-bg:#F6E4DA; --shadow:0 24px 48px -30px rgba(24,28,34,.35);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+.doc{
+  background:var(--bg); color:var(--ink); font-size:16px; line-height:1.62;
+  font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.serif,h1,h2,h3{font-family:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,'Times New Roman',serif;}
+h1,h2,h3{text-wrap:balance; font-weight:600; margin:0; color:var(--ink);}
+p{max-width:66ch}
+a{color:var(--gold)}
+.tab{font-variant-numeric:tabular-nums}
+
+.wrap{max-width:940px;margin:0 auto;padding:0 24px}
+.wrap-wide{max-width:1220px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden;background:#0E1116}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,22,.2),rgba(14,17,22,.6) 58%,rgba(14,17,22,.95))}
+.hero-in{position:relative;z-index:2;padding:70px 24px 44px;width:100%;color:#F2EEE3}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#C9A961;font-weight:700;margin:0 0 16px}
+.hero h1{font-size:clamp(32px,5.4vw,58px);line-height:1.06;margin:0 0 18px;max-width:17ch;color:#FAF7EE}
+.hero .lead{font-size:18.5px;max-width:58ch;color:#D5D1C4;margin:0 0 30px}
+.stats{display:flex;flex-wrap:wrap;gap:30px;border-top:1px solid rgba(242,238,227,.2);padding-top:22px}
+.stats>div{min-width:130px}
+.stats .n{font-family:'Iowan Old Style',Georgia,serif;font-size:23px;color:#FAF7EE;display:block;letter-spacing:-.01em}
+.stats .l{font-size:12.5px;color:#B9AF97}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap}
+.nav-in{max-width:1220px;margin:0 auto;padding:0 24px;display:flex;gap:2px}
+.nav a{display:inline-block;padding:14px 13px;font-size:13.5px;color:var(--ink-soft);text-decoration:none;border-bottom:2px solid transparent;font-weight:500}
+.nav a:hover{color:var(--ink);border-color:var(--gold)}
+
+section{padding:78px 0}
+section.tight{padding:54px 0}
+.head{margin-bottom:34px}
+.kick{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 10px}
+h2{font-size:clamp(25px,3.5vw,36px);line-height:1.15}
+h3{font-size:19px;margin:0 0 12px}
+.dek{color:var(--ink-soft);font-size:16.5px;max-width:62ch;margin:12px 0 0}
+
+.g2{display:grid;grid-template-columns:1.08fr .92fr;gap:46px;align-items:start}
+@media (max-width:840px){.g2{grid-template-columns:1fr;gap:32px}}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 26px;box-shadow:var(--shadow)}
+.clean{list-style:none;margin:0;padding:0}
+.clean li{padding:11px 0;border-top:1px solid var(--border)}
+.clean li:first-child{border-top:none}
+
+.note{border-radius:12px;padding:22px 26px;margin:24px 0;border:1px solid var(--border);background:var(--surface)}
+.note.warn{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 34%,var(--border))}
+.note.good{background:var(--sea-soft);border-color:color-mix(in srgb,var(--sea) 34%,var(--border))}
+.note.gold{background:var(--gold-soft);border-color:color-mix(in srgb,var(--gold) 34%,var(--border))}
+.note-l{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;margin:0 0 9px;display:block}
+.note.warn .note-l{color:var(--warn)} .note.good .note-l{color:var(--sea)} .note.gold .note-l{color:var(--gold)}
+.note p{margin:0 0 11px;max-width:none} .note p:last-child{margin-bottom:0}
+
+.tw{overflow-x:auto;border:1px solid var(--border);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+thead th{background:var(--surface-2);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{font-weight:700;background:var(--surface-2)}
+td.m{color:var(--ink-soft);font-size:13px}
+
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:20px;background:var(--gold-soft);color:var(--gold)}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.good{background:var(--sea-soft);color:var(--sea)}
+
+figure{margin:0}
+.bleed img{width:100%;max-height:66vh;object-fit:cover;display:block}
+.bleed figcaption{max-width:940px;margin:12px auto 0;padding:0 24px;font-size:13.5px;color:var(--ink-soft)}
+
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.style-col h3{font-size:17px;margin:0 0 4px}
+.style-col .sub{font-size:13px;color:var(--ink-soft);margin:0 0 14px;max-width:none}
+.style-col img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:8px;margin-bottom:9px;box-shadow:var(--shadow);display:block}
+@media (max-width:900px){.styles{grid-template-columns:1fr;gap:34px}}
+
+blockquote{position:relative;margin:28px 0;padding:4px 0 4px 44px;font-style:italic;font-size:20px;line-height:1.5;max-width:52ch;font-family:'Iowan Old Style',Georgia,serif}
+blockquote::before{content:"\201C";position:absolute;left:0;top:-12px;font-size:52px;line-height:1;font-style:normal;color:var(--gold)}
+blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ink-soft);margin-top:9px}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--border)}
+.steps li:first-child{border-top:none}
+.steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--surface-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--gold)}
+
+/* CALCULATOR */
+.calc{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+.presets{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
+.presets button{font:inherit;font-size:13.5px;font-weight:600;padding:12px 18px;min-height:44px;border-radius:24px;border:1px solid var(--border);background:var(--bg);color:var(--ink-soft);cursor:pointer}
+.presets button:hover{border-color:var(--gold);color:var(--ink)}
+.presets button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#fff}
+.presets button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 40px}
+@media (max-width:900px){.calc-grid{grid-template-columns:1fr}}
+.ctrl-group h4{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);font-weight:800;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.ctrl{margin-bottom:17px}
+.ctrl-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:5px}
+.ctrl label{font-size:13.5px;color:var(--ink)}
+.ctrl .val{font-size:13.5px;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ctrl .hint{font-size:11.5px;color:var(--ink-soft);margin-top:4px;display:block;max-width:none}
+input[type=range]{width:100%;height:26px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer;display:block}
+input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:3px;background:var(--surface-2);border:1px solid var(--border)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--gold);border:3px solid var(--surface);margin-top:-10px;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+input[type=range]::-moz-range-track{height:5px;border-radius:3px;background:var(--surface-2);border:1px solid var(--border)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--gold);border:3px solid var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.3)}
+
+.out{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 0}
+@media (max-width:900px){.out{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--bg);border:1px solid var(--border);border-radius:11px;padding:16px 17px}
+.kpi .k{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:0 0 7px;display:block}
+.kpi .v{font-family:'Iowan Old Style',Georgia,serif;font-size:25px;font-variant-numeric:tabular-nums;line-height:1.1;display:block;color:var(--ink)}
+.kpi .s{font-size:12px;color:var(--ink-soft);margin-top:5px;display:block}
+.kpi.hero-kpi{border-color:var(--gold);border-width:2px}
+.kpi .v.pos{color:var(--sea)} .kpi .v.neg{color:var(--warn)}
+
+.verdict{margin-top:20px;border-radius:11px;padding:17px 20px;font-size:14.5px;border:1px solid var(--border)}
+.verdict.ok{background:var(--sea-soft);border-color:color-mix(in srgb,var(--sea) 34%,var(--border))}
+.verdict.bad{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 34%,var(--border))}
+.verdict strong{display:block;margin-bottom:4px;font-size:15px}
+
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
+@media (max-width:900px){.charts{grid-template-columns:1fr}}
+.chart-box h4{font-size:13.5px;margin:0 0 12px;font-weight:700}
+.chart-box svg{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-soft);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+footer{border-top:1px solid var(--border);padding:46px 0 64px;color:var(--ink-soft);font-size:13px}
+footer .src{columns:2;column-gap:34px;margin:0;padding:0;list-style:none}
+footer li{break-inside:avoid;margin-bottom:6px}
+@media (max-width:640px){footer .src{columns:1}}
+
+@media (max-width:640px){
+  section{padding:54px 0}
+  .calc{padding:20px 16px}
+  .hero{min-height:92vh}
+}
+</style>
+
+<div class="doc">
+
+<header class="hero">
+  <img src="{{IMG_HERO}}" alt="Концепт-визуализация христианского арт-курорта на пологом склоне с видом на Андаманское море, Пхукет" />
+  <div class="hero-in wrap-wide">
+    <p class="eyebrow">Инвестиционный меморандум · предварительная версия · Пхукет, Таиланд</p>
+    <h1>Христианский арт-курорт мирового уровня</h1>
+    <p class="lead">Монументальные скульптуры, стены Писания и премиальное гостеприимство на острове, который уже принимает более 10 миллионов туристов в год. Документ рабочий: цифры пересчитываются бегунками, допущения открыты для спора.</p>
+    <div class="stats">
+      <div><span class="n tab">$5.9M</span><span class="l">фаза 1, без отеля</span></div>
+      <div><span class="n tab">13.6%</span><span class="l">доходность фазы 1 при 1000 гостей/день</span></div>
+      <div><span class="n tab">1&nbsp;300</span><span class="l">гостей/день нужно полному комплексу</span></div>
+      <div><span class="n tab">&lt;80&nbsp;м</span><span class="l">предел высоты участка по закону</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#verdict">Главный вывод</a>
+    <a href="#position">Позиционирование</a>
+    <a href="#concept">Концепция</a>
+    <a href="#styles">Стили</a>
+    <a href="#magnet">Магнит</a>
+    <a href="#ministry">Служение</a>
+    <a href="#legal">⚠ Регуляторика</a>
+    <a href="#world">Аналоги</a>
+    <a href="#calc">🎛 Финмодель</a>
+    <a href="#phases">Фазы</a>
+    <a href="#deal">Инвестору</a>
+    <a href="#next">Дальше</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="verdict">
+  <div class="head">
+    <p class="kick">Если читать только один раздел</p>
+    <h2>Отель разбавляет доходность. Строить его первым — ошибка</h2>
+    <p class="dek">Это не мнение, а результат модели ниже: можете проверить сами, подвигав бегунки.</p>
+  </div>
+
+  <div class="g2">
+    <div>
+      <p>Финансовая модель, собранная на реальных бенчмарках Пхукета, даёт три вывода, которые противоречат интуиции.</p>
+      <p><strong>Первое: поток посетителей решает всё остальное.</strong> Увеличение потока с 600 до 2 700 человек в день добавляет 11 процентных пунктов доходности. Любой другой рычаг — цена номера, загрузка, средний чек, цена земли — добавляет от 1 до 4. Это проект про трафик, а не про гостиничный сервис.</p>
+      <p><strong>Второе: номера в отеле почти не двигают доходность.</strong> Рост с 30 до 50 номеров меняет доходность на −0.0 пункта, до 70 номеров — на −0.1. Отель добавляет ровно столько же капитала, сколько приносит выручки. Он оправдан как удобство и как способ поймать гостей свадеб, но не как двигатель возврата.</p>
+      <p><strong>Третье, и главное: арт-парк с кафе без отеля выигрывает у полного комплекса на любом уровне потока.</strong></p>
+    </div>
+    <div class="card">
+      <p class="kick" style="margin-bottom:14px">Сравнение при одном и том же потоке</p>
+      <div class="tw" style="border:none">
+        <table>
+          <thead><tr><th>Поток</th><th class="n">Фаза 1<br><span style="font-weight:400;text-transform:none;letter-spacing:0">$5.9M</span></th><th class="n">Всё сразу<br><span style="font-weight:400;text-transform:none;letter-spacing:0">$15.1M</span></th></tr></thead>
+          <tbody>
+            <tr><td class="m">1 000/день</td><td class="n" style="color:var(--sea);font-weight:700">13.6%</td><td class="n">8.6%</td></tr>
+            <tr><td class="m">1 500/день</td><td class="n" style="color:var(--sea);font-weight:700">20.3%</td><td class="n">11.2%</td></tr>
+            <tr><td class="m">2 000/день</td><td class="n" style="color:var(--sea);font-weight:700">27.0%</td><td class="n">13.8%</td></tr>
+            <tr><td class="m">2 700/день</td><td class="n" style="color:var(--sea);font-weight:700">36.4%</td><td class="n">17.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin-top:12px">Доходность на вложенный капитал. Девелоперские проекты в гостиничной недвижимости целятся в 8–12%.</p>
+    </div>
+  </div>
+
+  <div class="note good">
+    <span class="note-l">Что из этого следует</span>
+    <p><strong>Строим фазу 1 — арт-парк, кафе и церковь без отеля, примерно $5–6M.</strong> Она окупается уже при потоке уровня Big Buddha (~1 000 человек в день) и даёт 13.6% доходности. Это в два с половиной раза меньше капитала под риском, и это единственный честный способ проверить главную гипотезу проекта — что люди сюда поедут — до того, как в землю закопаны $15M.</p>
+    <p>Отель строим вторым, когда поток доказан фактическими цифрами, а не прогнозом. К этому моменту у вас будет реальная посещаемость, реальный средний чек и реальная статистика по свадьбам — то есть предмет для разговора с инвестором на языке фактов, а не презентаций.</p>
+  </div>
+
+  <div class="note warn">
+    <span class="note-l">Почему это стоит воспринять всерьёз</span>
+    <p>Технико-экономические обоснования у религиозных аттракций систематически завышают посещаемость примерно вдвое. <strong>Ark Encounter</strong> в Кентукки при бюджете $102M обещал 1.2–2 млн посетителей в первый год, получил около 800 тысяч, а к восьмому году (2024–25) опустился до 682 101. Он не дотянул даже до собственного худшего сценария ни разу за восемь лет.</p>
+    <p><strong>Holy Land Experience</strong> в Орландо потратил свыше $130M, донор закрывал около $5M убытка ежегодно, объект закрылся в 2020-м, продан за $32M и снесён. С частными инвесторами такой роскоши нет — экономика должна сходиться сама.</p>
+  </div>
+</section>
+
+<section id="position" class="tight">
+  <div class="head">
+    <p class="kick">Кто именно приедет</p>
+    <h2>Модель Белого храма, а не паломнического центра</h2>
+  </div>
+  <div class="g2">
+    <div>
+      <p>Первоначальная идея — привезти европейских и американских христиан специально ради этого места. Ресёрч эту гипотезу не подтверждает, и об этом честнее сказать сразу.</p>
+      <p>Христианские паломнические туроператоры — Educational Opportunities, Pilgrim Tours, Inspiration Travel — возят исключительно по местам библейской и исторической значимости: Израиль, Иордания, Египет, Рим, Греция, Турция. Ни один не упоминает Таиланд или любой объект, построенный с нуля. Прецедента, когда современный рукотворный христианский объект попал в их маршруты, найти не удалось. Причина структурная: их продукт — «пройти там, где ходил Иисус». У Пхукета такого крючка нет.</p>
+      <p>Подтверждает это и Индонезия: статуя Иисуса Буntu Бураке (40 м, около $1.65M, открывал президент) занимает первое место у внутренних туристов и лишь второе у иностранных — международным магнитом осталась местная культура, а не статуя.</p>
+      <p><strong>Но рабочая модель существует, и она сильнее исходной.</strong> Ват Ронг Кхун — Белый храм в Чианг Рае: построен художником с нуля начиная с 1997 года, зеркальная облицовка, более миллиона посетителей в год, и это при том, что он стоит в стороне от основных туристических троп. Туда едут не молиться. Едут смотреть на невероятное.</p>
+    </div>
+    <div class="card">
+      <p class="kick" style="margin-bottom:14px">Смена рамки</p>
+      <ul class="clean">
+        <li><strong>Не</strong> «привезти христиан на Пхукет»<br><strong>А</strong> перехватить часть тех, кто уже здесь</li>
+        <li>Пхукет принимает <strong>10M+ туристов в год</strong>. Перехват 3–5% — это 300–500 тысяч человек</li>
+        <li>Это кратно больше любого реалистичного въездного христианского потока</li>
+        <li>Христиане остаются <strong>ценным вторым сегментом</strong> — они приедут, просто на них нельзя строить модель</li>
+      </ul>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin-top:14px">Meow Wolf (США): 318 000 посетителей и $5.35M выручки в первый год; в 2025 более половины новых гостей узнали о проекте из TikTok и Instagram.</p>
+    </div>
+  </div>
+  <blockquote>Кто жаждет, иди ко Мне и пей<cite>Ин. 7:38 — рабочий пример темы для настенной каллиграфии</cite></blockquote>
+</section>
+
+</main>
+
+<figure class="bleed">
+  <img src="{{IMG_ARTPARK}}" alt="Концепт-визуализация: скульптурная площадь со статуей Христа в отражающем бассейне и ангелами у арки" />
+  <figcaption>Скульптурная площадь — ядро притяжения. Статуя в отражающем бассейне, ангелы-хранители у входа, стены с высеченным Писанием</figcaption>
+</figure>
+
+<main class="wrap">
+
+<section id="concept">
+  <div class="head">
+    <p class="kick">Из чего состоит</p>
+    <h2>Пять слоёв</h2>
+    <p class="dek">Каждый слой решает свою задачу. Порядок — по важности для экономики, а не по размеру вложений.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Слой</th><th>Задача</th><th>Роль в экономике</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Арт-парк</strong></td><td class="m">Статуя Христа, ангелы-хранители, стены Писания, продуманные фотозоны</td><td class="m">Генератор трафика. Вход свободный — это маркетинговый бюджет, а не центр выручки</td></tr>
+        <tr><td><strong>Кафе</strong></td><td class="m">Многоэтажное, премиальное, с видом; каллиграфия Писания во всю высоту атриума</td><td class="m">Главный монетизатор потока. Конвертирует посетителя в чек</td></tr>
+        <tr><td><strong>Церковь</strong></td><td class="m">Действующий храм и место венчаний</td><td class="m">Смысловое ядро + площадка выездных свадеб</td></tr>
+        <tr><td><strong>Отель</strong></td><td class="m">Бутик 25–40 номеров премиального уровня</td><td class="m">Ловит гостей свадеб и тех, кто хочет остаться. Доходность не двигает — строить вторым</td></tr>
+        <tr><td><strong>Служение</strong></td><td class="m">Молитва с гостями, ответы на вопросы о вере</td><td class="m">Не монетизируется. Отличает место от музея</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="styles" class="tight">
+  <div class="head">
+    <p class="kick">Три направления</p>
+    <h2>Выберите визуальный язык</h2>
+    <p class="dek">Не финальный проект, а три разных прочтения. На чём остановитесь — с тем и идём к архитектору.</p>
+  </div>
+  <div class="styles">
+    <div class="style-col">
+      <h3>A. Средиземноморский</h3>
+      <p class="sub">Белый камень, золото, купола, арки. Максимальный контраст с тропиками и лучший результат в кадре.</p>
+      <img src="{{IMG_A1}}" alt="Средиземноморский стиль, панорама комплекса" />
+      <img src="{{IMG_A2}}" alt="Средиземноморский стиль, скульптурная площадь" />
+      <img src="{{IMG_A3}}" alt="Средиземноморский стиль, интерьер многоэтажного кафе" />
+    </div>
+    <div class="style-col">
+      <h3>B. Тропический люкс</h3>
+      <p class="sub">Тёмный камень, вода, сдержанная геометрия в духе Aman. Дороже в деталях, но безупречно уместно на острове.</p>
+      <img src="{{IMG_B1}}" alt="Тропический люкс, панорама комплекса" />
+      <img src="{{IMG_B2}}" alt="Тропический люкс, скульптурная площадь" />
+      <img src="{{IMG_B3}}" alt="Тропический люкс, интерьер многоэтажного кафе" />
+    </div>
+    <div class="style-col">
+      <h3>C. Неоклассика</h3>
+      <p class="sub">Мрамор, колоннады, парадные лестницы. Самый монументальный и самый дорогой в исполнении.</p>
+      <img src="{{IMG_C1}}" alt="Неоклассика, панорама комплекса" />
+      <img src="{{IMG_C2}}" alt="Неоклассика, скульптурная площадь" />
+      <img src="{{IMG_C3}}" alt="Неоклассика, интерьер многоэтажного кафе" />
+    </div>
+  </div>
+  <div class="note warn">
+    <span class="note-l">Важное ограничение по всем трём</span>
+    <p>Рендеры показывают комплекс на <strong>пологом склоне ниже 80 метров над уровнем моря</strong>, а не на вершине горы. Это не художественный выбор, а требование закона — подробности в разделе о регуляторике. Любая визуализация «храм на вершине» обещает то, что не получит разрешения.</p>
+  </div>
+</section>
+
+<section id="magnet">
+  <div class="head">
+    <p class="kick">Как это работает без рекламного бюджета</p>
+    <h2>Арт-парк — это маркетинговый канал</h2>
+  </div>
+  <div class="g2">
+    <div>
+      <p>При свободном входе арт-парк не приносит выручки напрямую. Считать его центром затрат — правильно, но неполно: он заменяет собой рекламный бюджет.</p>
+      <p>Вместо $300–500 тысяч ежегодно на привлечение — разовое вложение в скульптуру, которая продолжает приводить людей десятилетиями. В базовом сценарии стоимость привлечения одного посетителя выходит около <strong>16 бат</strong>, а средняя выручка с него — около <strong>219 бат</strong>. Соотношение, недостижимое ни для одного платного канала.</p>
+      <p>Механика виральности документирована и воспроизводима. Disney строит фасады со сжатием этажей — первый в полный масштаб, второй в 5/8, третий в половину — чтобы здание читалось выше, чем оно есть. Infinity-бассейны проектируются под конкретный ракурс камеры ещё на стадии чертежа. Это не украшательство, а инженерия внимания.</p>
+    </div>
+    <div class="card">
+      <p class="kick" style="margin-bottom:14px">Что проектируем под кадр</p>
+      <ul class="clean">
+        <li><strong>Ось прибытия</strong> — статуя раскрывается не сразу, а через арку с ангелами</li>
+        <li><strong>Отражающий бассейн</strong> — удваивает высоту статуи в кадре</li>
+        <li><strong>Стены Писания</strong> — текст попадает в кадр вместе с человеком</li>
+        <li><strong>Фотозоны с крыльями</strong> — гость становится частью сюжета, а не туристом на фоне</li>
+        <li><strong>Вечерняя подсветка</strong> — вторая причина приехать и второй пик публикаций</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="ministry" class="tight">
+  <div class="head">
+    <p class="kick">Не декорация</p>
+    <h2>Молитва и ответы на вопросы о вере</h2>
+    <p class="dek">Отдельная операционная линия со своими требованиями — планировать всерьёз, а не упоминать в брошюре.</p>
+  </div>
+  <div class="g2">
+    <div>
+      <p>На площадке дежурит команда, готовая помолиться с гостем и ответить на духовные вопросы — ненавязчиво, как открытая дверь рядом с кафе. Именно это отличает место от художественного музея: не только красиво посмотреть, но и с кем-то поговорить.</p>
+      <p>Модель не нужно изобретать. <strong>Healing Rooms Ministries</strong> — сеть из 1 200+ точек в 70 странах, служение бесплатное, полностью на волонтёрах: обучение двумя четырёхнедельными потоками в год, типичная смена — раз в четыре недели. <strong>Pilgrim Coffee House</strong> во Франции держит молитвенную комнату прямо рядом с залом кафе.</p>
+    </div>
+    <div class="note warn" style="margin:0">
+      <span class="note-l">Юридическая рамка обязательна</span>
+      <p><strong>Виза «R».</strong> Иностранцы ведут религиозную деятельность только по Non-Immigrant «R» со спонсорством признанной Департаментом религий тайской организации, <strong>без зарплаты</strong>; при прекращении спонсорства виза отзывается. Квота на 2023 год — 1 004 иностранных миссионера, из них 949 христианских.</p>
+      <p><strong>Отдельное юрлицо.</strong> Прямого правила о религиозной деятельности внутри коммерческого отеля найти не удалось. Рабочая схема — служение через отдельную структуру, признанную Департаментом религий, а не через гостиничную компанию.</p>
+      <p><strong>Границы и подготовка.</strong> Правила работы с несовершеннолетними и уязвимыми гостями, вежливый непринуждающий подход к людям другой веры. Языки: английский, русский, китайский, тайский.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<figure class="bleed">
+  <img src="{{IMG_CAFE}}" alt="Концепт-визуализация интерьера многоэтажного премиального кафе со стеной Писания во всю высоту атриума" />
+  <figcaption>Многоэтажное кафе — главный монетизатор потока. Каллиграфия Писания во всю высоту атриума работает и как интерьер, и как фотозона</figcaption>
+</figure>
+
+<main class="wrap">
+
+<section id="legal">
+  <div class="head">
+    <p class="kick">Прочитать до выбора участка</p>
+    <h2>Регуляторика решает, что вообще можно построить</h2>
+  </div>
+
+  <div class="note warn">
+    <span class="note-l">⚠ Участок на вершине горы — юридически недоступен</span>
+    <p>Уведомление Министерства природных ресурсов и окружающей среды о природоохранных зонах провинции Пхукет (Royal Gazette 13.12.2024, действует до 13.12.2029):</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Высота над уровнем моря</th><th>Что разрешено</th></tr></thead>
+      <tbody>
+        <tr><td><strong>выше 140 м</strong></td><td>Застройка <strong>запрещена</strong></td></tr>
+        <tr><td><strong>80–140 м</strong></td><td>Условно — <strong>только для земли, приобретённой до вступления в силу правил 2017 года</strong>; одиночное здание, малая высота и площадь застройки</td></tr>
+        <tr><td><strong>ниже 80 м</strong></td><td>Обычное регулирование <span class="tag good">наш диапазон</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tw" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Уклон участка</th><th>Что разрешено</th></tr></thead>
+      <tbody>
+        <tr><td><strong>более 35%</strong></td><td>Запрещено</td></tr>
+        <tr><td><strong>20–35%</strong></td><td>Только малоэтажная низкоплотная застройка</td></tr>
+        <tr><td><strong>до 20%</strong></td><td>Обычное регулирование <span class="tag good">наш диапазон</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:18px">Поскольку землю мы покупаем сейчас, в полосу 80–140 метров мы не попадаем — исключение действует только для участков, приобретённых до 2017 года. <strong>Реалистичный участок: ниже 80 метров, уклон до 20%.</strong> Вид на море с такой высоты вполне реален; «храм на вершине» — нет.</p>
+  <p>Отдельный вопрос юристу: привязано ли исключение к участку или к владельцу. Если к участку — можно искать землю, купленную прежним владельцем до 2017 года.</p>
+
+  <div class="note warn">
+    <span class="note-l">Почему правила ужесточили</span>
+    <p>23 августа 2024 года на склоне под Big Buddha сошёл оползень: <strong>13 погибших</strong>, пострадали 209 домохозяйств. Расследование установило, что комплекс фонда занимал около 3.2 гектара сверх разрешённого, дренаж был спроектирован неверно, нарушены 17 из 21 условия разрешения; председателя фонда обвинили в захвате лесных земель. Площадка вернулась к работе только 3 марта 2026 года под 25 новыми условиями Департамента лесного хозяйства — а в январе 2026-го открылась и закрылась снова через три дня.</p>
+    <p>Правоприменение активное: 23 июля 2025 года прошли рейды по пяти нелицензированным отелям Пхукета за номинальное владение и нарушения лицензий.</p>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <p class="kick" style="margin-bottom:14px">Лицензии и согласования</p>
+      <ul class="clean">
+        <li><strong>Hotel Act.</strong> До 8 номеров — освобождение. Наличие ресторана автоматически переводит в Type 2. Работа без лицензии: до года тюрьмы и/или 20 000 бат плюс 10 000 бат в день</li>
+        <li><strong>EIA.</strong> Порог — от 80 номеров <em>или</em> от 4 000 м² полезной площади. Отель с многоэтажным кафе и церковью почти наверняка перевалит по площади. Срок 6–12 месяцев, для новичка 8–14</li>
+        <li><strong>Береговая линия.</strong> Отель ближе 50 м от берега требует EIA независимо от размера</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="kick" style="margin-bottom:14px">Владение и структура</p>
+      <ul class="clean">
+        <li><strong>BOI</strong> даёт 100% иностранного владения и право на землю. Для 20–99 номеров действует SME-трек: от 1 млн бат на номер, то есть 25–40 млн бат для нашего размера — достижимо</li>
+        <li><span class="tag warn">не подтверждено</span> С 1 сентября 2025 введено ограничение BOI на иностранное владение и землю для части видов деятельности. Попадают ли отели — выяснить до расчёта на BOI</li>
+        <li><strong>Кафе</strong> ограничено отдельно и не является самостоятельной BOI-категорией: отдельным юрлицом потребует тайского большинства</li>
+        <li><strong>Земля религиозного фонда</strong> (до 50 рай с одобрения МВД) — только уставные цели. Прецедента сдачи такой земли коммерческому отелю не найдено. Безопаснее разделить титулы</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note good">
+    <span class="note-l">Хорошая новость</span>
+    <p>Задокументированных случаев негативной реакции буддийского большинства на христианские монументы в Таиланде найти не удалось. Историческая терпимость реальна: португальская миссия работает с 1518 года, первую церковь финансировал король. Христиане составляют менее 1.5% населения, конфликтов вокруг монументов в открытых источниках нет.</p>
+  </div>
+</section>
+
+<section id="world" class="tight">
+  <div class="head">
+    <p class="kick">Проверка на реальности</p>
+    <h2>Мировые аналоги</h2>
+    <p class="dek">Включая провалы — они информативнее историй успеха.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Объект</th><th>Что это</th><th>Поток</th><th>Модель и итог</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ват Ронг Кхун</strong><br><span class="m">Белый храм, Чианг Рай</span></td><td class="m">Арт-объект, построен художником с 1997</td><td class="m">1M+/год<br>≈2 700/день</td><td class="m">Наш главный ориентир. Едут ради зрелища, не ради религии</td></tr>
+        <tr><td><strong>Big Buddha</strong><br><span class="m">Пхукет</span></td><td class="m">Статуя 45 м, донаты</td><td class="m">«1 000+ в хороший день»</td><td class="m">Построен за ~30M бат на пожертвованиях. Локальный потолок потока</td></tr>
+        <tr><td><strong>Meow Wolf</strong><br><span class="m">США</span></td><td class="m">Иммерсивное искусство</td><td class="m">318k в первый год</td><td class="m">$5.35M выручки в первый год; 50%+ гостей приходят из соцсетей</td></tr>
+        <tr><td><strong>Ark Encounter</strong><br><span class="m">Кентукки</span></td><td class="m">Ковчег, билет $59.95</td><td class="m">682k (2024-25)</td><td class="m"><span class="tag warn">промах</span> Обещал 1.2–2M. Не дотянул ни разу за 8 лет</td></tr>
+        <tr><td><strong>Holy Land Experience</strong><br><span class="m">Орландо</span></td><td class="m">Тематический парк</td><td class="m">—</td><td class="m"><span class="tag warn">провал</span> $130M+, убыток ~$5M/год, закрыт 2020, снесён</td></tr>
+        <tr><td><strong>Heritage USA</strong><br><span class="m">Южная Каролина</span></td><td class="m">Христианский парк</td><td class="m">пик 4.9–6M/год</td><td class="m"><span class="tag warn">провал</span> Был 3-м парком США. Банкротство с долгом ~$72M</td></tr>
+        <tr><td><strong>Иисус Бунту Бураке</strong><br><span class="m">Индонезия</span></td><td class="m">Статуя 40 м, ~$1.65M</td><td class="m">—</td><td class="m">#1 у внутренних туристов, лишь #2 у иностранных</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note warn">
+    <span class="note-l">Отдельно про многоэтажное кафе</span>
+    <p>Тайский рынок «кафе-достопримечательностей» сейчас сжимается. Neramit Cafe на 13 раях был построен более чем за 30 млн бат, а сейчас сдаётся в аренду за 1.49 млн бат в год. Комментарии 2025 года описывают слабый потребительский спрос и модель «кафе, которое умеет всё» как более неприбыльную. Институциональных бенчмарков выручки на место для этого сегмента не существует вообще.</p>
+    <p><strong>Вывод для нас:</strong> кафе обосновано как монетизатор чужого трафика — потока арт-парка и гостей отеля. Как самостоятельная ставка на «кафе-достопримечательность» оно не выдерживает проверки данными.</p>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="head">
+    <p class="kick">Ядро документа</p>
+    <h2>🎛 Финансовая модель</h2>
+    <p class="dek">Крутите бегунки — всё пересчитывается сразу. Модель намеренно умеет показывать, при каких допущениях проект не сходится.</p>
+  </div>
+
+  <div class="calc">
+    <div class="presets" role="group" aria-label="Готовые сценарии">
+      <button type="button" data-preset="conservative">Консервативный</button>
+      <button type="button" data-preset="base" aria-pressed="true">Базовый</button>
+      <button type="button" data-preset="optimistic">Оптимистичный</button>
+      <button type="button" data-preset="phase1">Только фаза 1 (без отеля)</button>
+    </div>
+
+    <div class="out" id="kpis"></div>
+    <div class="verdict" id="verdict-box"></div>
+
+    <div class="charts">
+      <div class="chart-box">
+        <h4>Выручка по потокам, млн бат в год</h4>
+        <svg id="chart-rev" viewBox="0 0 460 210" role="img" aria-label="Диаграмма выручки по источникам"></svg>
+        <div class="legend">
+          <span><i style="background:var(--gold)"></i>Номера</span>
+          <span><i style="background:var(--sea)"></i>Кафе</span>
+          <span><i style="background:#8E7BB5"></i>Мероприятия</span>
+          <span><i style="background:#C08A5E"></i>Мерч</span>
+          <span><i style="background:#6E8FA8"></i>Донаты</span>
+        </div>
+      </div>
+      <div class="chart-box">
+        <h4>Денежный поток нарастающим итогом, млн бат</h4>
+        <svg id="chart-cf" viewBox="0 0 460 210" role="img" aria-label="Диаграмма накопленного денежного потока по годам"></svg>
+        <div class="legend"><span>Пересечение нуля — точка окупаемости. Год 10 включает продажу объекта по мультипликатору 8× EBITDA.</span></div>
+      </div>
+    </div>
+
+    <div class="calc-grid" style="margin-top:34px">
+      <div class="ctrl-group" id="grp-capex">
+        <h4>Инвестиции</h4>
+      </div>
+      <div class="ctrl-group" id="grp-rev">
+        <h4>Выручка</h4>
+      </div>
+      <div class="ctrl-group" id="grp-ops">
+        <h4>Операционные допущения</h4>
+      </div>
+      <div class="ctrl-group" id="grp-capex2">
+        <h4>Стройка</h4>
+      </div>
+    </div>
+
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:24px;max-width:none">
+      Курс 1 USD ≈ 36 бат. Горизонт расчёта IRR — 10 лет, терминальная стоимость — 8× EBITDA. Выход на полную мощность заложен постепенным: 45% выручки в первый год, 70% во второй, 90% в третий. Себестоимость считается раздельно по кафе и мерчу, GOP и EBITDA не смешиваются.
+    </p>
+  </div>
+</section>
+
+<section id="phases" class="tight">
+  <div class="head">
+    <p class="kick">Порядок действий</p>
+    <h2>Фазирование</h2>
+    <p class="dek">Логика простая: сначала дёшево проверяем главную гипотезу, потом вкладываем большие деньги.</p>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Фаза</th><th>Что строим</th><th class="n">Капитал</th><th>Что проверяем</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0. Подготовка</strong><br><span class="m">6–12 мес</span></td><td class="m">Юрструктура, поиск участка ниже 80 м, геотехника, EIA, разрешения, сметы скульпторов</td><td class="n">$0.4–0.8M</td><td class="m">Что участок вообще пригоден и что разрешения получаемы</td></tr>
+        <tr><td><strong>1. Магнит</strong><br><span class="m">12–18 мес</span></td><td class="m">Земля, арт-парк со статуей и ангелами, стены Писания, церковь, многоэтажное кафе, парковка</td><td class="n">$5–6M</td><td class="m"><strong>Главную гипотезу: люди действительно едут.</strong> Реальный поток, реальный чек, реальный спрос на свадьбы</td></tr>
+        <tr><td><strong>2. Отель</strong><br><span class="m">после доказанного потока</span></td><td class="m">Бутик 25–40 номеров, расширение F&amp;B, wellness</td><td class="n">$8–10M</td><td class="m">Конверсию потока в ночёвки. Строится только при подтверждённых цифрах</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note gold">
+    <span class="note-l">Критерий перехода к фазе 2</span>
+    <p>Не «прошёл год», а <strong>устойчивый поток от 1 000 посетителей в день на протяжении двух полных сезонов</strong>, включая низкий сезон с мая по октябрь. Если фаза 1 даёт 400–600 человек в день — отель строить нельзя: полный комплекс на таком потоке даёт менее 9% доходности и окупается за 12+ лет.</p>
+    <p>Этот критерий стоит зафиксировать в инвестиционном соглашении, а не оставлять на усмотрение энтузиазма.</p>
+  </div>
+</section>
+
+<section id="deal">
+  <div class="head">
+    <p class="kick">Инвестору</p>
+    <h2>Структура и возврат</h2>
+  </div>
+  <div class="g2">
+    <div>
+      <p>Проект предлагается как поэтапный, с раздельным финансированием фаз. Такая структура защищает инвестора фазы 1 от риска, что отель будет построен под недоказанный поток.</p>
+      <p><strong>Фаза 1 при потоке 1 000–1 500 человек в день</strong> даёт доходность 13.6–20.3% на вложенный капитал, IRR 12.2–19.3% и окупаемость 5.9–8.3 года при вложениях около $5.9M. Это конкурентоспособно для девелопмента в гостиничной недвижимости, где ориентир доходности — 8–12%.</p>
+      <p>Ключевое отличие от типового курортного проекта: у нас есть актив, которого нет у конкурентов — источник органического трафика. Рынок Пхукета идёт к перенасыщению (свыше 100 000 номеров к 2026 году, 41 новый проект в 2026–2030, загрузка по острову упала на 6% за 2025 год при росте ставок на 5%). Конкурировать «ещё одним люксовым бутиком» бессмысленно. Уникальный арт-объект рядом и есть настоящая дифференциация.</p>
+    </div>
+    <div class="note warn" style="margin:0">
+      <span class="note-l">Конфликт, который надо признать вслух</span>
+      <p>Проект одновременно обещает инвесторам доходность и является служением. Это напряжение, а не синергия.</p>
+      <p>Holy Land Experience умер именно здесь: донорские деньги годами закрывали убыток и маскировали отрицательную юнит-экономику. С частными инвесторами такой подушки нет.</p>
+      <p><strong>Практический вывод:</strong> служение финансируется из прибыли коммерческой части и не должно быть строкой, ради которой инвестор недополучает возврат. Разделение юрлиц решает это и юридически, и по существу.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next" class="tight">
+  <div class="head">
+    <p class="kick">Дальше</p>
+    <h2>Следующие шаги</h2>
+  </div>
+  <ol class="steps">
+    <li><div><strong>Тайский юрист по земле и BOI</strong><br><span class="m">Три вопроса: привязано ли исключение «до 2017» к участку или владельцу; попадают ли отели под ограничение BOI от 01.09.2025; можно ли совместить землю религиозного фонда с коммерческим отелем без разделения титулов</span></div></li>
+    <li><div><strong>Поиск участка с параметрами ниже 80 м и уклоном до 20%</strong><br><span class="m">С проверкой высоты и уклона до внесения задатка, а не после</span></div></li>
+    <li><div><strong>Геотехнические и гидрологические изыскания</strong><br><span class="m">До архитектурного проекта. После оползня 2024 года это не формальность</span></div></li>
+    <li><div><strong>Сметы от двух-трёх тайских скульптурных мастерских</strong><br><span class="m">Отдельными строками на статую и на ангелов. Это самая мягкая цифра всей модели</span></div></li>
+    <li><div><strong>Выбор визуального направления из трёх</strong><br><span class="m">И архитектурная концепция под фазу 1</span></div></li>
+    <li><div><strong>Дешёвая проверка спроса до стройки</strong><br><span class="m">Соцсети с рендерами, опрос туроператоров Пхукета, замер интереса свадебных агентств. Стоит тысячи долларов, а не миллионы</span></div></li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 20px"><strong style="color:var(--ink)">О статусе документа.</strong> Это предварительная версия для обсуждения, не инвестиционное предложение и не замена due diligence. Регуляторные нормы, юнит-экономика и мировые аналоги собраны из открытых источников с указанием дат. Оценки CAPEX, выручки и возврата — расчётная модель на основе этих данных, не заменяет смету местного архитектора, подрядчика и юриста. Часть регуляторных цифр получена из вторичных источников, которые местами противоречат друг другу — перед проектированием нужен буквальный текст Royal Gazette. Курс 1 USD ≈ 36 бат. Подготовлено с помощью Claude (Anthropic), июль 2026.</p>
+    <p class="kick" style="margin-bottom:10px;color:var(--ink-soft)">Источники</p>
+    <ul class="src">
+      <li>MNRE — природоохранные зоны Пхукета B.E. 2567, Royal Gazette 13.12.2024</li>
+      <li>ASA — разбор ограничений застройки склонов Пхукета</li>
+      <li>Khaosod English, Bangkok Post, Phuket News — оползень Big Buddha, авг. 2024 и последствия</li>
+      <li>Thaiger — рейды по нелицензированным отелям Пхукета, июль 2025</li>
+      <li>Hotel Act B.E. 2547 (перевод Samuiforsale); Tilleke &amp; Gibbins — нормы безопасности зданий</li>
+      <li>Kap.co.th — обзор требований EIA в Таиланде</li>
+      <li>Tilleke &amp; Gibbins — ограничения BOI на иностранное владение и землю, 2025</li>
+      <li>ILCT — иностранцы в ограниченных видах деятельности</li>
+      <li>Land Code §84-85 (FAO); Siam Legal — земля религиозного назначения</li>
+      <li>US State Dept — отчёт о религиозной свободе, Таиланд, 2023</li>
+      <li>Thai Hotels Association (Southern Chapter) via Nation Thailand — ADR Пхукета 2024</li>
+      <li>Knight Frank Thailand — рынок отелей Бангкока и Пхукета, 1П 2025</li>
+      <li>C9 Hotelworks — обзор рынка Пхукета, март 2026</li>
+      <li>Krungsri Research — прогноз гостиничной отрасли 2026–2028</li>
+      <li>KZ Architecture — стоимость строительства на Пхукете, 2026</li>
+      <li>FazWaz, Tranio — цены на землю и недвижимость Пхукета</li>
+      <li>ArchDaily — архитектура под алгоритмы соцсетей, фев. 2026</li>
+      <li>Artnet, Forbes, Blooloop — Meow Wolf: посещаемость, выручка, каналы привлечения</li>
+      <li>Backpackers Wanderlust — Ват Ронг Кхун, Белый храм</li>
+      <li>Thaiger — Neramit Cafe: стоимость постройки и сдача в аренду</li>
+      <li>Naturalis Historian, июль 2025 — падение посещаемости Ark Encounter</li>
+      <li>Christianity Today, Fox35 — закрытие и снос Holy Land Experience</li>
+      <li>Wikipedia — Heritage USA; Иисус Бунту Бураке; Христос Вунгтау</li>
+      <li>ResearchGate — стратегия продвижения Бунту Бураке, Индонезия</li>
+      <li>Healing Rooms Ministries; 24-7 Prayer — модели молитвенного служения</li>
+      <li>Educational Opportunities, Pilgrim Tours — маршруты христианских туроператоров</li>
+    </ul>
+  </div>
+</footer>
+
+</div>
+
+<script>
+{{MODEL_JS}}
+</script>
+<script>
+(function(){
+  "use strict";
+  var M = window.PhuketModel;
+  var FX = M.FX;
+
+  var SPECS = [
+    {g:"grp-capex", k:"landRai",         label:"Земля, рай",              min:3,  max:15,  step:0.5, fmt:function(v){return v+" рай ("+(v*1600).toLocaleString("ru")+" м²)";}},
+    {g:"grp-capex", k:"landPricePerRai", label:"Цена земли за рай",       min:3.5,max:80,  step:0.5, fmt:function(v){return v+" млн ฿";}, hint:"Kamala склон с видом на море 13–25 млн; Bangtao и Surin до 80 млн"},
+    {g:"grp-capex", k:"keys",            label:"Номеров в отеле",         min:0,  max:120, step:5,   fmt:function(v){return v===0?"без отеля (фаза 1)":v+" номеров";}, hint:"Доходность почти не меняется от числа номеров — проверьте сами"},
+    {g:"grp-capex", k:"artBudget",       label:"Бюджет арт-парка и церкви",min:15,max:150, step:5,   fmt:function(v){return v+" млн ฿";}, hint:"Самая неподтверждённая цифра модели — нужны сметы мастерских"},
+
+    {g:"grp-capex2",k:"costPerKey",      label:"Стоимость номера",        min:4.5,max:9,   step:0.1, fmt:function(v){return v.toFixed(1)+" млн ฿";}, hint:"Бутик на Пхукете: 55–75 тыс. ฿/м² плюс меблировка 250–800 тыс./номер"},
+    {g:"grp-capex2",k:"cafeSqm",         label:"Площадь кафе",            min:400,max:2000,step:50,  fmt:function(v){return v.toLocaleString("ru")+" м²";}},
+    {g:"grp-capex2",k:"slopePremium",    label:"Надбавка за склон",       min:0,  max:15,  step:1,   fmt:function(v){return "+"+v+"%";}, hint:"Подпорные стены, дренаж, доступ техники — подтверждено 8–15%"},
+    {g:"grp-capex2",k:"contingency",     label:"Резерв на непредвиденное",min:10, max:25,  step:1,   fmt:function(v){return v+"%";}},
+
+    {g:"grp-rev",   k:"visitorsDay",     label:"Посетителей в день",      min:100,max:3000,step:50,  fmt:function(v){return v.toLocaleString("ru")+" чел. ("+Math.round(v*365/1000)+" тыс./год)";}, hint:"⚠ Самое хрупкое допущение. Ориентиры: Big Buddha ~1 000/день, Белый храм ~2 700/день"},
+    {g:"grp-rev",   k:"cafeConversion",  label:"Доля зашедших в кафе",    min:10, max:60,  step:1,   fmt:function(v){return v+"%";}, hint:"Главный рычаг монетизации свободного входа"},
+    {g:"grp-rev",   k:"cafeCheck",       label:"Средний чек кафе",        min:300,max:900, step:10,  fmt:function(v){return v+" ฿";}},
+    {g:"grp-rev",   k:"adr",             label:"Цена номера за ночь",     min:3000,max:20000,step:250,fmt:function(v){return v.toLocaleString("ru")+" ฿";}, hint:"Средняя по острову 5 652 ฿ (1П 2025); премиальный сегмент 10–25 тыс."},
+    {g:"grp-rev",   k:"occupancy",       label:"Загрузка отеля",          min:40, max:85,  step:1,   fmt:function(v){return v+"%";}, hint:"По острову 79.5%, но за 2025 год загрузка упала на 6%"},
+    {g:"grp-rev",   k:"eventsMonth",     label:"Свадеб и мероприятий в месяц",min:0,max:20,step:1,   fmt:function(v){return v+" в месяц";}, hint:"Часовня со статуей и ангелами — готовый премиальный фон для выездных свадеб"},
+    {g:"grp-rev",   k:"eventAvg",        label:"Бюджет мероприятия",      min:80, max:600, step:10,  fmt:function(v){return v+" тыс. ฿";}},
+
+    {g:"grp-ops",   k:"donationShare",   label:"Доля жертвующих",         min:5,  max:50,  step:1,   fmt:function(v){return v+"%";}, hint:"Вход свободный — донат добровольный"},
+    {g:"grp-ops",   k:"donationAvg",     label:"Средний донат",           min:50, max:500, step:10,  fmt:function(v){return v+" ฿";}},
+    {g:"grp-ops",   k:"merchShare",      label:"Доля покупающих мерч",    min:5,  max:30,  step:1,   fmt:function(v){return v+"%";}},
+    {g:"grp-ops",   k:"merchAvg",        label:"Средний чек мерча",       min:200,max:1500,step:50,  fmt:function(v){return v+" ฿";}},
+    {g:"grp-ops",   k:"staffPerKey",     label:"Персонала на номер",      min:1,  max:2.5, step:0.1, fmt:function(v){return v.toFixed(1);}, hint:"Мировой ориентир для люкса 1–2.5"},
+    {g:"grp-ops",   k:"otaShare",        label:"Доля броней через OTA",   min:0,  max:100, step:5,   fmt:function(v){return v+"%";}, hint:"У независимых отелей около 63% идёт через агрегаторы"},
+    {g:"grp-ops",   k:"otaCommission",   label:"Комиссия OTA",            min:15, max:25,  step:1,   fmt:function(v){return v+"%";}},
+    {g:"grp-ops",   k:"marketingPct",    label:"Маркетинг от выручки",    min:2,  max:9,   step:0.5, fmt:function(v){return v+"%";}}
+  ];
+
+  var PHASE1 = Object.assign({}, M.presets.base, {keys:0, landRai:4, landPricePerRai:12, visitorsDay:1000});
+  var state = Object.assign({}, M.presets.base);
+  var inputs = {};
+
+  function money(m){ // млн бат -> строка
+    if (Math.abs(m) >= 1000) return (m/1000).toFixed(2)+" млрд ฿";
+    return m.toFixed(1)+" млн ฿";
+  }
+  function usd(m){ return "$"+(m/FX).toFixed(1)+"M"; }
+
+  SPECS.forEach(function(s){
+    var wrap = document.createElement("div");
+    wrap.className = "ctrl";
+    var top = document.createElement("div");
+    top.className = "ctrl-top";
+    var lab = document.createElement("label");
+    lab.textContent = s.label;
+    lab.setAttribute("for", "in-"+s.k);
+    var val = document.createElement("span");
+    val.className = "val";
+    top.appendChild(lab); top.appendChild(val);
+    var inp = document.createElement("input");
+    inp.type = "range"; inp.id = "in-"+s.k;
+    inp.min = s.min; inp.max = s.max; inp.step = s.step;
+    inp.addEventListener("input", function(){
+      state[s.k] = parseFloat(inp.value);
+      clearPreset();
+      render();
+    });
+    wrap.appendChild(top); wrap.appendChild(inp);
+    if (s.hint){
+      var h = document.createElement("span");
+      h.className = "hint"; h.textContent = s.hint;
+      wrap.appendChild(h);
+    }
+    document.getElementById(s.g).appendChild(wrap);
+    inputs[s.k] = {input:inp, val:val, spec:s};
+  });
+
+  function clearPreset(){
+    document.querySelectorAll(".presets button").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+  }
+
+  document.querySelectorAll(".presets button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var name = btn.getAttribute("data-preset");
+      state = Object.assign({}, name === "phase1" ? PHASE1 : M.presets[name]);
+      clearPreset();
+      btn.setAttribute("aria-pressed","true");
+      syncInputs();
+      render();
+    });
+  });
+
+  function syncInputs(){
+    Object.keys(inputs).forEach(function(k){
+      if (state[k] !== undefined) inputs[k].input.value = state[k];
+    });
+  }
+
+  function render(){
+    Object.keys(inputs).forEach(function(k){
+      var o = inputs[k];
+      o.val.textContent = o.spec.fmt(parseFloat(o.input.value));
+    });
+    var r = M.compute(state);
+    renderKPIs(r);
+    renderVerdict(r);
+    renderRevChart(r);
+    renderCfChart(r);
+  }
+
+  function renderKPIs(r){
+    var box = document.getElementById("kpis");
+    var yieldCls = r.yieldOnCost >= 10 ? "pos" : (r.yieldOnCost < 6 ? "neg" : "");
+    var irrCls = r.irr === null ? "neg" : (r.irr >= 12 ? "pos" : (r.irr < 6 ? "neg" : ""));
+    var items = [
+      {k:"Инвестиции", v:usd(r.capex), s:money(r.capex), hero:false},
+      {k:"Выручка в год", v:money(r.revenue), s:"на полной мощности", hero:false},
+      {k:"EBITDA", v:money(r.ebitda), s:r.ebitdaMargin.toFixed(1)+"% от выручки", hero:false},
+      {k:"Доходность на капитал", v:r.yieldOnCost.toFixed(1)+"%", s:"ориентир девелопмента 8–12%", hero:true, cls:yieldCls},
+      {k:"IRR за 10 лет", v:(r.irr===null?"не окупается":r.irr.toFixed(1)+"%"), s:"с продажей по 8× EBITDA", hero:true, cls:irrCls},
+      {k:"Окупаемость", v:(r.payback===null?"никогда":r.payback.toFixed(1)+" лет"), s:"без учёта продажи", hero:false},
+      {k:"Безубыточная загрузка", v:(r.coveredWithoutRooms?"0%":r.breakEvenOcc.toFixed(0)+"%"), s:(r.coveredWithoutRooms?"покрыто без номеров":"нужно для выхода в ноль"), hero:false},
+      {k:"Привлечение гостя", v:r.cac.toFixed(0)+" ฿", s:"выручка с гостя "+r.revPerVisitor.toFixed(0)+" ฿", hero:false}
+    ];
+    box.innerHTML = items.map(function(i){
+      return '<div class="kpi'+(i.hero?" hero-kpi":"")+'"><span class="k">'+i.k+'</span>'+
+             '<span class="v '+(i.cls||"")+'">'+i.v+'</span><span class="s">'+i.s+'</span></div>';
+    }).join("");
+  }
+
+  function renderVerdict(r){
+    var box = document.getElementById("verdict-box");
+    var ok = r.yieldOnCost >= 10 && r.irr !== null && r.irr >= 10;
+    var txt, title;
+    if (r.ebitda <= 0){
+      title = "Проект убыточен на операционном уровне";
+      txt = "При этих допущениях объект не покрывает собственные операционные расходы. Дело не в окупаемости капитала — он не выходит в ноль по текущей деятельности.";
+    } else if (!ok){
+      title = "Ниже инвестиционного порога";
+      txt = "Доходность "+r.yieldOnCost.toFixed(1)+"% при ориентире 8–12% для девелопмента. Главный рычаг — поток посетителей: попробуйте поднять его и посмотрите, как меняется картина. Число номеров, вопреки интуиции, почти ничего не меняет.";
+    } else {
+      title = "Сходится";
+      txt = "Доходность "+r.yieldOnCost.toFixed(1)+"% и IRR "+r.irr.toFixed(1)+"% — это конкурентоспособно для гостиничного девелопмента. Проверьте, насколько реалистичен заложенный поток в "+state.visitorsDay.toLocaleString("ru")+" человек в день: Big Buddha даёт около 1 000, Белый храм около 2 700.";
+    }
+    box.className = "verdict " + (ok ? "ok" : "bad");
+    box.innerHTML = "<strong>"+title+"</strong>"+txt;
+  }
+
+  function renderRevChart(r){
+    var svg = document.getElementById("chart-rev");
+    var parts = [
+      {label:"Номера", v:r.revenueParts.rooms, c:"var(--gold)"},
+      {label:"Кафе", v:r.revenueParts.cafe, c:"var(--sea)"},
+      {label:"Мероприятия", v:r.revenueParts.events, c:"#8E7BB5"},
+      {label:"Мерч", v:r.revenueParts.merch, c:"#C08A5E"},
+      {label:"Донаты", v:r.revenueParts.donation, c:"#6E8FA8"}
+    ];
+    var total = parts.reduce(function(a,b){return a+b.v;},0);
+    var s = "";
+    if (total <= 0){
+      s = '<text x="230" y="105" text-anchor="middle" font-size="13" fill="var(--ink-soft)">Нет выручки при этих допущениях</text>';
+    } else {
+      var x = 10, W = 440;
+      parts.forEach(function(p){
+        var w = (p.v/total)*W;
+        if (w > 0.5){
+          s += '<rect x="'+x.toFixed(1)+'" y="20" width="'+w.toFixed(1)+'" height="46" fill="'+p.c+'" opacity="0.92"/>';
+          if (w > 46){
+            s += '<text x="'+(x+w/2).toFixed(1)+'" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">'+Math.round(p.v/total*100)+'%</text>';
+          }
+        }
+        x += w;
+      });
+      var y = 96;
+      parts.slice().sort(function(a,b){return b.v-a.v;}).forEach(function(p){
+        s += '<rect x="10" y="'+(y-9)+'" width="11" height="11" rx="2" fill="'+p.c+'"/>';
+        s += '<text x="29" y="'+y+'" font-size="12.5" fill="var(--ink)">'+p.label+'</text>';
+        s += '<text x="450" y="'+y+'" text-anchor="end" font-size="12.5" font-weight="600" fill="var(--ink)" style="font-variant-numeric:tabular-nums">'+p.v.toFixed(1)+'</text>';
+        y += 22;
+      });
+    }
+    svg.innerHTML = s;
+  }
+
+  function renderCfChart(r){
+    var svg = document.getElementById("chart-cf");
+    var cum = [], acc = 0;
+    for (var i = 0; i < r.flows.length; i++){ acc += r.flows[i]; cum.push(acc); }
+    var min = Math.min.apply(null, cum), max = Math.max.apply(null, cum);
+    if (max === min) max = min + 1;
+    var W = 440, H = 150, X0 = 10, Y0 = 30;
+    function px(i){ return X0 + (i/(cum.length-1))*W; }
+    function py(v){ return Y0 + H - ((v-min)/(max-min))*H; }
+    var s = "";
+    var zeroY = py(0);
+    if (zeroY >= Y0 && zeroY <= Y0+H){
+      s += '<line x1="'+X0+'" y1="'+zeroY.toFixed(1)+'" x2="'+(X0+W)+'" y2="'+zeroY.toFixed(1)+'" stroke="var(--border)" stroke-width="1" stroke-dasharray="4,4"/>';
+      s += '<text x="'+(X0+W)+'" y="'+(zeroY-5).toFixed(1)+'" text-anchor="end" font-size="11" fill="var(--ink-soft)">ноль</text>';
+    }
+    var d = "";
+    cum.forEach(function(v,i){ d += (i===0?"M":"L") + px(i).toFixed(1) + " " + py(v).toFixed(1) + " "; });
+    s += '<path d="'+d+'" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linejoin="round"/>';
+    cum.forEach(function(v,i){
+      var above = v >= 0;
+      s += '<circle cx="'+px(i).toFixed(1)+'" cy="'+py(v).toFixed(1)+'" r="3" fill="'+(above?"var(--sea)":"var(--warn)")+'"/>';
+    });
+    s += '<text x="'+X0+'" y="'+(Y0+H+18)+'" font-size="11" fill="var(--ink-soft)">старт</text>';
+    s += '<text x="'+(X0+W)+'" y="'+(Y0+H+18)+'" text-anchor="end" font-size="11" fill="var(--ink-soft)">год 10 + продажа</text>';
+    s += '<text x="'+X0+'" y="18" font-size="11.5" fill="var(--ink-soft)">итог: '+cum[cum.length-1].toFixed(0)+' млн ฿</text>';
+    svg.innerHTML = s;
+  }
+
+  syncInputs();
+  render();
+})();
+</script>

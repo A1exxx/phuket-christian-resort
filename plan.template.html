@@ -1,0 +1,605 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кафе-арт-пространство при церкви — Пхукет</title>
+<style>
+{{FONT_FACE_CSS}}
+
+:root{
+  --bg:#E8E3D5; --surface:#FBF9F2; --surface-2:#F1ECDD; --ink:#16211C; --ink-soft:#4A584F;
+  --border:#D6CDB6; --accent:#A9812E; --accent-soft:#EADFC2; --good:#3F5D50; --good-bg:#E1E8E1;
+  --warn:#A6512E; --warn-bg:#F4E3D9; --shadow:0 20px 40px -24px rgba(22,33,28,0.25);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#121A16; --surface:#1B2620; --surface-2:#22302A; --ink:#EDE7D8; --ink-soft:#AEB8AC;
+    --border:#33403A; --accent:#C9A050; --accent-soft:#3A3220; --good:#7FAA95; --good-bg:#1E2C26;
+    --warn:#D6906E; --warn-bg:#33231C; --shadow:0 20px 40px -24px rgba(0,0,0,0.5);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121A16; --surface:#1B2620; --surface-2:#22302A; --ink:#EDE7D8; --ink-soft:#AEB8AC;
+  --border:#33403A; --accent:#C9A050; --accent-soft:#3A3220; --good:#7FAA95; --good-bg:#1E2C26;
+  --warn:#D6906E; --warn-bg:#33231C; --shadow:0 20px 40px -24px rgba(0,0,0,0.5);
+}
+:root[data-theme="light"]{
+  --bg:#E8E3D5; --surface:#FBF9F2; --surface-2:#F1ECDD; --ink:#16211C; --ink-soft:#4A584F;
+  --border:#D6CDB6; --accent:#A9812E; --accent-soft:#EADFC2; --good:#3F5D50; --good-bg:#E1E8E1;
+  --warn:#A6512E; --warn-bg:#F4E3D9; --shadow:0 20px 40px -24px rgba(22,33,28,0.25);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+.doc{
+  background:var(--bg); color:var(--ink);
+  font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  line-height:1.6; font-size:16px; -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'FrauncesEmbed','Iowan Old Style','Palatino Linotype',Georgia,'Noto Serif',serif;}
+h1,h2,h3,.pull{font-family:'FrauncesEmbed','Iowan Old Style','Palatino Linotype',Georgia,'Noto Serif',serif; text-wrap:balance; font-weight:600; color:var(--ink);}
+p{max-width:65ch}
+.tab-nums{font-variant-numeric:tabular-nums;}
+a{color:var(--accent)}
+
+.wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+.wrap-wide{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+/* ---- HERO ---- */
+.hero{position:relative; min-height:78vh; display:flex; align-items:flex-end; overflow:hidden; background:var(--ink);}
+.hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.78;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,26,22,.15) 0%, rgba(18,26,22,.55) 62%, rgba(18,26,22,.92) 100%);}
+.hero-content{position:relative; z-index:2; padding:64px 24px 40px; width:100%; color:#F3EFE2;}
+.eyebrow{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:#D8CBA0; font-weight:600; margin:0 0 14px;}
+.hero h1{font-size:clamp(30px,5vw,52px); line-height:1.08; margin:0 0 16px; max-width:15ch; color:#F8F5EA;}
+.hero p.lead{font-size:18px; max-width:56ch; color:#DAD5C4; margin:0 0 26px;}
+.stat-strip{display:flex; flex-wrap:wrap; gap:28px; border-top:1px solid rgba(243,239,226,.22); padding-top:20px; margin-top:8px;}
+.stat-strip div{min-width:120px;}
+.stat-strip .num{font-family:'FrauncesEmbed','Iowan Old Style',Georgia,serif; font-size:22px; color:#F8F5EA; display:block;}
+.stat-strip .lbl{font-size:12.5px; color:#C9BE9F;}
+
+/* ---- NAV ---- */
+.toc{position:sticky; top:0; z-index:20; background:var(--surface); border-bottom:1px solid var(--border); overflow-x:auto; white-space:nowrap;}
+.toc-inner{max-width:1180px; margin:0 auto; padding:0 24px; display:flex; gap:4px;}
+.toc a{display:inline-block; padding:14px 14px; font-size:13.5px; color:var(--ink-soft); text-decoration:none; border-bottom:2px solid transparent; font-weight:500;}
+.toc a:hover{color:var(--ink); border-color:var(--border);}
+
+/* ---- SECTIONS ---- */
+section{padding:76px 0;}
+section.tight{padding:52px 0;}
+.section-head{margin-bottom:36px;}
+.kicker{font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:700; margin:0 0 10px;}
+h2{font-size:clamp(24px,3.4vw,34px); margin:0 0 4px;}
+.dek{color:var(--ink-soft); font-size:16.5px; max-width:60ch; margin:10px 0 0;}
+
+.grid-2{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start;}
+@media (max-width:820px){.grid-2{grid-template-columns:1fr;}}
+
+.risk-list{border-top:1px solid var(--border);}
+.risk-row{display:grid; grid-template-columns:240px 1fr; gap:32px; padding:24px 0; border-bottom:1px solid var(--border);}
+.risk-row p{margin:0;}
+.risk-row .kicker{margin:0;}
+.risk-row .risk-body{font-size:14.5px; color:var(--ink-soft); max-width:60ch;}
+@media (max-width:700px){.risk-row{grid-template-columns:1fr; gap:8px;}}
+
+.figure{margin:0;}
+.figure img{width:100%; height:auto; display:block; border-radius:6px; box-shadow:var(--shadow);}
+.figure figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px; max-width:60ch;}
+.figure-bleed{margin:0 0 0 0;}
+.figure-bleed img{width:100%; max-height:64vh; object-fit:cover; display:block;}
+.figure-bleed figcaption{max-width:920px; margin:12px auto 0; padding:0 24px; font-size:13.5px; color:var(--ink-soft);}
+
+blockquote.pull{position:relative; margin:30px 0; padding:6px 0 6px 46px; font-style:italic; font-size:20px; line-height:1.5; max-width:52ch; color:var(--ink); font-family:'FrauncesEmbed','Iowan Old Style',Georgia,serif;}
+blockquote.pull::before{content:"\201C"; position:absolute; left:0; top:-10px; font-size:52px; line-height:1; font-style:normal; color:var(--accent); font-family:'FrauncesEmbed','Iowan Old Style',Georgia,serif;}
+blockquote.pull cite{display:block; font-style:normal; font-size:12.5px; color:var(--ink-soft); margin-top:10px; font-family:inherit;}
+
+.card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:24px 26px; box-shadow:var(--shadow);}
+.list-clean{list-style:none; margin:0; padding:0;}
+.list-clean li{padding:10px 0; border-top:1px solid var(--border);}
+.list-clean li:first-child{border-top:none;}
+
+.callout{border-radius:10px; padding:22px 24px; margin:22px 0; border:1px solid var(--border);}
+.callout.warn{background:var(--warn-bg); border-color:color-mix(in srgb, var(--warn) 35%, var(--border));}
+.callout.good{background:var(--good-bg); border-color:color-mix(in srgb, var(--good) 35%, var(--border));}
+.callout .callout-label{font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; margin:0 0 8px; display:block;}
+.callout.warn .callout-label{color:var(--warn);}
+.callout.good .callout-label{color:var(--good);}
+.callout p{margin:0 0 10px; max-width:none;}
+.callout p:last-child{margin-bottom:0;}
+
+.gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.gallery-item{margin:0;}
+.gallery-item img{width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:8px; box-shadow:var(--shadow); display:block;}
+.gallery-item figcaption{font-size:13.5px; color:var(--ink-soft); margin-top:10px;}
+.gallery-item figcaption strong{color:var(--ink); font-family:'FrauncesEmbed','Iowan Old Style',Georgia,serif; font-size:15px; display:block; margin-bottom:3px;}
+@media (max-width:820px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.gallery-grid{grid-template-columns:1fr;}}
+
+table{border-collapse:collapse; width:100%; font-size:14.5px;}
+.table-wrap{overflow-x:auto; border:1px solid var(--border); border-radius:10px;}
+th,td{padding:12px 16px; text-align:left; border-bottom:1px solid var(--border); vertical-align:top;}
+thead th{background:var(--surface-2); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600; white-space:nowrap;}
+tbody tr:last-child td{border-bottom:none;}
+td.num,th.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap;}
+tr.total td{font-weight:700; background:var(--surface-2);}
+td.muted{color:var(--ink-soft); font-size:13px;}
+
+.tag{display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.04em; padding:3px 9px; border-radius:20px; background:var(--accent-soft); color:var(--accent);}
+.tag.good{background:var(--good-bg); color:var(--good);}
+.tag.warn{background:var(--warn-bg); color:var(--warn);}
+
+.chart-legend{display:flex; gap:20px; font-size:13px; color:var(--ink-soft); margin-top:10px;}
+.chart-legend span{display:inline-flex; align-items:center; gap:6px;}
+.chart-legend i{width:10px; height:10px; border-radius:2px; display:inline-block;}
+
+.checklist{list-style:none; margin:0; padding:0; counter-reset:step;}
+.checklist li{counter-increment:step; display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--border);}
+.checklist li:first-child{border-top:none;}
+.checklist li::before{content:counter(step); flex:none; width:30px; height:30px; border-radius:50%; background:var(--surface-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:var(--accent);}
+
+footer{border-top:1px solid var(--border); padding:44px 0 60px; color:var(--ink-soft); font-size:13px;}
+footer a{color:var(--ink-soft);}
+footer .src-grid{columns:2; column-gap:32px;}
+@media (max-width:640px){footer .src-grid{columns:1;}}
+footer li{break-inside:avoid; margin-bottom:6px;}
+
+.svg-diagram{width:100%; height:auto; display:block;}
+.svg-diagram text{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;}
+
+@media (max-width:640px){
+  section{padding:52px 0;}
+  .hero{min-height:88vh;}
+  .stat-strip{gap:18px;}
+}
+</style>
+
+<div class="doc">
+
+<header class="hero">
+  <img src="{{IMG_HERO}}" alt="Концепт-визуализация: статуя Христа в центре бассейна под навесом, два ангела с пушистыми крыльями у входа, премиальные материалы, декоративный свет" />
+  <div class="hero-content wrap-wide">
+    <p class="eyebrow">Предварительный бизнес- и финансовый план · Пхукет, Таиланд</p>
+    <h1>Кафе и арт-пространство на территории церкви</h1>
+    <p class="lead">Тропический двор, кафе, монументальная скульптура Христа в динамичной позе, стены, исписанные Словом, и команда, которая молится с гостями и отвечает на вопросы о вере — место, ради которого едут специально, не мимоходом. Черновой расчёт для обсуждения с общиной, не итоговая смета.</p>
+    <div class="stat-strip">
+      <div><span class="num tab-nums">3</span><span class="lbl">сценария масштаба</span></div>
+      <div><span class="num tab-nums">$261k–$1.18M</span><span class="lbl">старт. инвестиции</span></div>
+      <div><span class="num tab-nums">≈2.5–3&nbsp;года</span><span class="lbl">окупаемость, оптим. сценарий</span></div>
+      <div><span class="num tab-nums">1</span><span class="lbl">критичный риск участка — см. ниже</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#vision">Видение</a>
+    <a href="#ministry">Молитва и служение</a>
+    <a href="#legal">⚠ Юрструктура и риск</a>
+    <a href="#cafe">Кафе</a>
+    <a href="#model">Бизнес-модель</a>
+    <a href="#statue">Статуя</a>
+    <a href="#gallery">5 вариантов</a>
+    <a href="#world">Мировые аналоги</a>
+    <a href="#scenarios">Сценарии</a>
+    <a href="#finance">Финплан</a>
+    <a href="#risks">Риски</a>
+    <a href="#next">Дальше</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="vision">
+  <div class="section-head">
+    <p class="kicker">Видение</p>
+    <h2>Не аттракцион — место, где задерживаются</h2>
+    <p class="dek">Разница с «инстаграм-музеем» или тематическим парком принципиальна для всей экономики ниже.</p>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>Идея строится на четырёх слоях: <strong>кафе</strong> как гостеприимство и операционный костяк, <strong>арт-объект</strong> — динамичная скульптура Христа, два ангела-хранителя на входе и стены, исписанные местами Писания — как визуальный магнит и бесконечный источник фотозон, <strong>двор</strong> как пространство, где можно просто постоять, и <strong>служение</strong> — люди, которые молятся с гостями и отвечают на вопросы о вере, если гость сам об этом просит. Big Buddha и Wat Chalong на Пхукете держат посетителя минуты; место с сильным арт-объектом и живым разговором умеет держать час и больше — и именно час превращается в чек, а иногда и в то, ради чего человек прилетел на остров.</p>
+      <p>Аудитория — не только паломники. Это тайские и экспат-семьи по выходным, туристы «на один день» с юга острова, свадебные и событийные группы, и отдельно — христиане со всего мира, которые находят такие места целенаправленно через сарафанное радио и соцсети задолго до того, как они появляются в путеводителях.</p>
+      <blockquote class="pull">«Кто жаждет, иди ко Мне и пей»<cite>Ин. 7:38 — рабочий пример темы для одной из настенных надписей</cite></blockquote>
+      <p><strong>О формате «чудо света».</strong> Амбиция стать местом, ради которого специально едут — это амбиция масштаба и красоты, не амбиция конкурировать с Big Buddha за статус духовного центра острова. Разница не в размере статуи, а в маркетинговой рамке: не «наш святой центр против ихнего», а «редкое по красоте место на острове, которое стоит увидеть своими глазами». Первое — прямой путь к культурному и разрешительному конфликту (см. раздел ниже), второе — то же самое внимание и виральность в соцсетях без этого риска.</p>
+      <p>Мировые аналоги ниже (раздел «Мировые аналоги») показывают неудобную правду: самая высокая в мире статуя Христа в польском Швебодзине рекорд поставила, а устойчивый турпоток так и не получила — люди просто смотрят с шоссе и едут дальше, потому что вокруг статуи больше ничего нет. Именно поэтому этот план — не «статуя плюс парковка», а кафе, галерея, двор и служение вместе: превращают «увидел издалека» в «провёл здесь час».</p>
+    </div>
+    <div class="card">
+      <p class="kicker" style="margin-bottom:14px;">Четыре слоя пространства</p>
+      <ul class="list-clean">
+        <li><strong>Кафе</strong> — операционный костяк выручки, работает независимо от того, «сработал» ли арт-объект как магнит</li>
+        <li><strong>Статуя, ангелы, стены Писания</strong> — визуальный повод приехать и снять/поделиться, донат-модель, без платного входа</li>
+        <li><strong>Двор</strong> — ландшафт, вода, тень; главный ресурс — время, которое гость проводит на территории</li>
+        <li><strong>Служение</strong> — команда молитвы и ответов на вопросы о вере; не продаётся и не рекламируется агрессивно, но именно это отличает место от музея</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="ministry" class="tight">
+  <div class="section-head">
+    <p class="kicker">Не декорация</p>
+    <h2>Молитва и ответы на вопросы о вере</h2>
+    <p class="dek">Это отдельная операционная линия, а не красивая деталь для брошюры — планировать нужно всерьёз.</p>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>На площадке дежурит команда, готовая помолиться с гостем и ответить на духовные вопросы — не навязчиво, а как открытая дверь рядом с кафе и галереей. Это именно то, чего нет ни у Big Buddha, ни у художественного музея: не только красиво посмотреть, но и с кем-то поговорить.</p>
+      <p>Практически это, скорее всего, ротация волонтёров из общины по расписанию, а не штатные ставки — но одна платная или частично оплачиваемая позиция всё же нужна: координатор служения, который набирает, обучает и ставит на смены команду. Заложено отдельной строкой в OPEX ниже.</p>
+    </div>
+    <div class="callout good" style="margin:0;">
+      <span class="callout-label">Что нужно продумать заранее</span>
+      <p><strong>Обучение и границы.</strong> «Горящее сердце» — не замена подготовке: нужны чёткие правила по работе с несовершеннолетними, психологически уязвимыми гостями и вежливый, не давящий подход к людям другой веры, которые зашли просто посмотреть.</p>
+      <p><strong>Пространство.</strong> Тихий уголок в стороне от прохода кафе, не проходная зона — разговор о вере не должен звучать как элемент шоу.</p>
+      <p><strong>Языки.</strong> Турпоток Пхукета — минимум английский, русский и китайский, плюс тайский для местных; без этого команда сможет говорить не со всеми, кто придёт.</p>
+    </div>
+  </div>
+</section>
+
+<section id="legal" class="tight">
+  <div class="section-head">
+    <p class="kicker">Прочитать до старта проектирования</p>
+    <h2>Юрструктура и риск участка</h2>
+    <p class="dek">Это не формальность «для галочки» — от этого зависит, можно ли вообще законно управлять кафе и кому реально принадлежит земля.</p>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <p><strong>Иностранное владение F&amp;B-бизнесом.</strong> Foreign Business Act относит рестораны/кафе к List&nbsp;3 — деятельности, где «тайцы ещё не готовы конкурировать». По умолчанию иностранец не может владеть больше 49% операционной компании кафе; 51%+ должно быть у тайских партнёров, либо нужна отдельная лицензия (почти не выдаётся для обычного кафе) или статус BOI (обычное кафе само по себе под стандартные категории BOI не подпадает — это надо подтверждать у юриста, не предполагать).</p>
+      <p><strong>Апрель 2026 — не мелочь.</strong> Приказ DBD №1/2569 ужесточил проверку тайских акционеров (3&nbsp;мес. банковских выписок, очная верификация), а ИИ-система IBAS активно ищет номинальных тайских держателей. Штраф — 100 000–1 000 000&nbsp;бат и до 3 лет тюрьмы. Схема «формальный тайский партнёр, который ничем не рискует и не участвует» — это именно то, что сейчас ловят.</p>
+      <p><strong>Земля.</strong> Land Code §84–85 разрешает зарегистрированному тайскому религиозному фонду (มูลนิธิ) владеть землёй под религиозные/благотворительные цели с одобрения министерства, лимит 50&nbsp;рай (≈8&nbsp;га). Иностранное физлицо землёй в Таиланде в принципе не владеет напрямую. Земельный офис проверяет устав фонда — если структура выглядит как «фонд в пользу иностранца», в регистрации откажут.</p>
+    </div>
+    <div class="card">
+      <p class="kicker" style="margin-bottom:14px;">Рекомендуемая структура</p>
+      <ul class="list-clean">
+        <li>Земля — на тайском зарегистрированном религиозном фонде с реальным тайским большинством в правлении</li>
+        <li>Операционная компания кафе — тайское большинство (≥51%), иностранец как миноритарий/директор, не номинал</li>
+        <li>Опционально: рыночная аренда земли фондом операционной компании — легализует структуру и даёт фонду отдельный доход</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <span class="callout-label">⚠ Главный риск участка — не юридический, а геотехнический</span>
+    <p><strong>23 августа 2024 года на участке Big Buddha Phuket сошёл оползень, погибли 13 человек.</strong> Расследование указало на вырубку леса на склоне и неправильный отвод воды как причины. Объект был закрыт на ~18 месяцев и открылся заново только под 25 условиями Департамента лесного хозяйства. Это случилось на точно такой же категории участка — возвышенность, лесной массив, крупное сооружение — какую естественно рассматривать под «смотровую» статую.</p>
+    <p>Это прямое и свежее предупреждение, а не абстрактный риск. Если участок церкви — склон, холм или граничит с лесным фондом: геотехнические и гидрологические изыскания обязательны <strong>до</strong> архитектурного проекта, а не после.</p>
+  </div>
+
+  <div class="callout good">
+    <span class="callout-label">Разрешения и высота</span>
+    <p>Building Control Act относит к «высотным» здания от 23&nbsp;м с усиленным контролем; с августа 2025 EIA обязателен для проектов от 23&nbsp;м или от 10&nbsp;000&nbsp;м² — это добавляет 2–6 месяцев согласований. Держать статую в диапазоне 15–18&nbsp;м (сценарий Flagship ниже) — сознательный выбор остаться под этим порогом; финальный дизайн и постамент всё равно нужно сверять с EIA-порогом отдельно.</p>
+  </div>
+</section>
+
+<figure class="figure-bleed">
+  <img src="{{IMG_INTERIOR}}" alt="Концепт-визуализация интерьера кафе: стена целиком исписана каллиграфией библейских стихов с подсветкой, премиальная мягкая мебель, мрамор, декоративный свет" />
+  <figcaption>Интерьер кафе — «стол гостеприимства»: стена целиком исписана Писанием с подсветкой, мрамор и мягкая мебель вместо дерева, фотозоны вместо типичного декора</figcaption>
+</figure>
+
+<main class="wrap">
+<section id="cafe">
+  <div class="section-head">
+    <p class="kicker">Гостеприимство</p>
+    <h2>Кафе — операционный костяк</h2>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>Кафе спроектировано как самостоятельный, устойчивый бизнес, для которого статуя и двор — бонус к трафику, а не условие выживания. Меню — специалти-кофе и лёгкая тайско-средиземноморская кухня, рассчитанная на средний чек 250–450&nbsp;฿, характерный для туристического премиум-кафе на Пхукете.</p>
+      <p><strong>Материалы — сознательно премиальные, без дерева и ротанга:</strong> полированный мрамор и камень, мягкая обивка вместо деревянных стульев, латунные и золотые акценты, тёплый декоративный свет (гирлянды, бра, точечная подсветка) — вся площадка, включая двор со статуей, читается как единый премиальный объект, а не эконом-кафе с художественным довеском.</p>
+      <p>Стены — не рамки с картинами, а сплошная каллиграфия: крупные библейские тексты, выведенные вручную или прорезанные в камне с подсветкой, чередуются с 8–25 крупноформатными живописными панно (в зависимости от сценария) на темы конкретных мест Писания. Отдельно — 2–3 спроектированных фотозоны (крылья ангелов на стене, рама с цитатой, ниша с подсветкой), которые люди фотографируют и репостят сами, без модерации со стороны кафе. Ротация 1–2 работы в год держит повод вернуться.</p>
+    </div>
+    <div class="card">
+      <p class="kicker" style="margin-bottom:14px;">Ориентиры юнит-экономики (Пхукет)</p>
+      <ul class="list-clean">
+        <li>Средний чек: <strong>250–450&nbsp;฿</strong>/чел</li>
+        <li>Валовая маржа общепита: <strong>60–75%</strong></li>
+        <li>Аренда торговых площадей в туристич. зонах: <strong>400–550&nbsp;฿/м²/мес</strong></li>
+        <li>Бариста: 13–16k&nbsp;฿/мес · официант: 14–20.5k&nbsp;฿ · повар: ≈23k&nbsp;฿ · шеф: ≈48k&nbsp;฿ <span class="tag warn">верхняя граница</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="model" class="tight">
+  <div class="section-head">
+    <p class="kicker">Монетизация</p>
+    <h2>Смешанная модель — без платного входа</h2>
+    <p class="dek">Вход к статуе и галерее свободный. Зарабатываем на гостеприимстве вокруг, а не на плате за то, чтобы посмотреть.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Поток дохода</th><th>Логика</th><th class="num">Характер маржи</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Кафе (еда/напитки)</strong></td><td>Основной, предсказуемый поток; работает независимо от славы арт-объекта</td><td class="num">60–75%</td></tr>
+        <tr><td><strong>Донаты у статуи</strong></td><td>Свободное пожертвование, как в тайских храмах — без билета и рамок</td><td class="num">≈100%, но объём не гарантирован</td></tr>
+        <tr><td><strong>Сувениры / мерч</strong></td><td>Репродукции картин, локальные крафт-товары, кофе на вынос</td><td class="num">≈55–65%</td></tr>
+        <tr><td><strong>Мероприятия и экскурсии</strong></td><td>Венчания, групповые визиты, мастер-классы — по бронированию, не ежедневно</td><td class="num">≈65–70%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</main>
+
+<figure class="figure-bleed">
+  <img src="{{IMG_STATUE}}" alt="Крупный план: динамичная скульптура Христа, драпировка ткани в движении, бронзовая патина, тёплый боковой свет" style="max-height:72vh;" />
+  <figcaption>Статуя крупным планом — динамичная поза вместо статичной традиционной иконографии</figcaption>
+</figure>
+
+<figure class="figure-bleed">
+  <img src="{{IMG_C1}}" alt="Концепт-визуализация: грандиозный вход на территорию, два ангела-хранителя с крыльями по сторонам каменной арки" style="max-height:64vh;" />
+  <figcaption>Вход — два ангела-хранителя по сторонам арки, ведущей к статуе; первый кадр, который видит гость с улицы</figcaption>
+</figure>
+
+<main class="wrap">
+<section id="statue">
+  <div class="section-head">
+    <p class="kicker">Центральный объект</p>
+    <h2>Статуя — сама неопределённая цифра во всём плане</h2>
+  </div>
+  <div class="grid-2">
+    <div>
+      <p>Динамичная поза (в движении, а не фронтальная статика) — сознательный художественный выбор: она читается современно и фотографируется иначе, чем классическая иконография. Материал — развилка по трём осям: композит/стеклопластик (легче, быстрее, дешевле, требует обновления финиша раз в 5–8 лет), бронза (престиж, долговечность, кратно дороже и тяжелее по инженерии основания), бетон с облицовкой — как у Big Buddha Phuket (масштабируется на большую высоту, долгий цикл строительства).</p>
+      <p><strong>Честно об этой цифре: она наименее подтверждена ресёрчем.</strong> Малые формы (1.5–2&nbsp;м) стоят $1 000–8 000 в рознице и не масштабируются линейно на фигуру 6–18&nbsp;м. Общий индустриальный ориентир для монументального паблик-арта от 3&nbsp;м — $50 000–$5 000 000+, разброс слишком широк для планирования. Big Buddha Phuket (45&nbsp;м, бетон+мрамор) обошёлся в ≈30&nbsp;млн&nbsp;฿ (~$950k), но строился 12+ лет почти целиком на донатах и волонтёрском труде — не коммерческий бенчмарк для проекта с наёмным трудом и сжатым графиком.</p>
+      <p>Два ангела-хранителя на входе — отдельные фигуры меньшего масштаба (2.5–4&nbsp;м), задают «врата» перед главной статуей и удваивают число фотозон при относительно небольшой доле в общем бюджете статуй. В CAPEX ниже учтены вместе со статуей одной строкой «Стройка + статуя» — при заказе сметы у мастерской просите цену отдельно на ангелов, чтобы видеть реальное соотношение.</p>
+    </div>
+    <div class="callout warn" style="margin:0;">
+      <span class="callout-label">Перед тем как закладывать цифру в бюджет</span>
+      <p>Получите прямые сметы у 2–3 тайских скульптурных мастерских (в Чиангмае и Аюттхае регулярно льют статуи Будды высотой 5–15&nbsp;м) под конкретную высоту и материал, включая ангелов отдельной строкой. Цифры ниже в разделе «Финплан» — рабочая оценка для планирования, не замена реальной сметы.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="tight">
+  <div class="section-head">
+    <p class="kicker">Пять направлений</p>
+    <h2>Варианты — чтобы было из чего выбрать</h2>
+    <p class="dek">Не финальный дизайн, а пять разных прочтений одной идеи. Смотрите, что откликается, и на этом стоите — детальный проект рисует уже архитектор.</p>
+  </div>
+  <div class="gallery-grid">
+    <figure class="gallery-item">
+      <img src="{{IMG_C1}}" alt="Грандиозный вход с двумя ангелами-хранителями" />
+      <figcaption><strong>Величественный.</strong> Классика монументального масштаба — арка с ангелами, статуя видна издалека. Ближе всего к «чудо света».</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{{IMG_C2}}" alt="Сад с тропинкой и стихами Писания на камнях" />
+      <figcaption><strong>Сад Писания.</strong> Не одна точка, а прогулка: тропа среди зелени, стихи на камнях, молитвенные ниши по пути.</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{{IMG_C3}}" alt="Интерьер кафе со стеной Писания и фотозоной с крыльями ангела" />
+      <figcaption><strong>Фотозона.</strong> Акцент внутри: стена целиком в каллиграфии, готовые фотозоны с крыльями — сильнее всего работает на соцсети.</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{{IMG_C4}}" alt="Двор молитвы с прудом, статуей и ангелами" />
+      <figcaption><strong>Двор молитвы.</strong> Камерный и тихий — пруд, ангелы у арки, отдельный навес для служения. Меньше «вау», больше «останься подольше».</figcaption>
+    </figure>
+    <figure class="gallery-item">
+      <img src="{{IMG_C5}}" alt="Ночной вид с подсветкой статуи, ангелов и кафе" />
+      <figcaption><strong>Ночное чудо.</strong> Расчёт на вечер: подсветка превращает площадку во вторую причину приехать — уже после заката.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="world" class="tight">
+  <div class="section-head">
+    <p class="kicker">Проверка на реальности</p>
+    <h2>Мировые аналоги</h2>
+    <p class="dek">Реальные цифры похожих проектов по миру — включая провалы, а не только истории успеха.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Объект</th><th>Что это</th><th>Масштаб</th><th>Модель</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Christ the Redeemer, Рио</strong></td><td class="muted">Статуя + смотровая</td><td class="muted">≈2М/год</td><td class="muted">Платный вход R$186–1365</td></tr>
+        <tr><td><strong>Christ the King, Швебодзин</strong></td><td class="muted">Статуя-рекорд высоты</td><td class="muted">15k на открытии, дальше поток не удержался</td><td class="muted">Бесплатно</td></tr>
+        <tr><td><strong>Museum of the Bible, Вашингтон</strong></td><td class="muted">Музей</td><td class="muted">565k за 6 мес, 3М к 2024</td><td class="muted">Билет $34.99 + промо</td></tr>
+        <tr><td><strong>Ark Encounter, Кентукки</strong></td><td class="muted">Ковчег-репродукция + парк</td><td class="muted">682–764k/год (27–34% от прогноза)</td><td class="muted">Билет $59.95</td></tr>
+        <tr><td><strong>Holy Land Experience, Орландо</strong></td><td class="muted">Тематический парк</td><td class="muted">Закрыт 2020, продан в убыток</td><td class="muted">Донор-субсидия</td></tr>
+        <tr><td><strong>Healing Rooms Ministries</strong></td><td class="muted">Сеть молитв. служения</td><td class="muted">1200+ точек, 70 стран</td><td class="muted">Бесплатно, волонтёры</td></tr>
+        <tr><td><strong>Coming King Sculpture Garden, Техас</strong></td><td class="muted">Скульптурный парк</td><td class="muted">120k+/год, 200–500/день</td><td class="muted">Бесплатно, 365 дней до полуночи</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout warn">
+    <span class="callout-label">Неудобная правда: рекорд ≠ поток</span>
+    <p>Самая высокая в мире статуя Христа (Швебодзин, Польша) собрала 15 000 паломников на открытии — а турпоток, на который рассчитывал город, так и не пришёл: люди видят статую с шоссе и едут дальше, потому что вокруг неё больше ничего нет (полевое исследование, Berghahn Journals). Даже у самых раскрученных проектов реальная посещаемость систематически ниже прогноза: Ark Encounter в Кентукки при бюджете $102М собирает 682–764 тыс. посетителей в год — 27–34% от заявленных 1.2–2М (Answers in Genesis, 2024–25).</p>
+    <p><strong>Holy Land Experience в Орландо — крайний случай.</strong> $130М+ вложений, донор закрывал ~$5М убытка в год, никогда не вышел на самоокупаемость, живые актёрские шоу оказались негибкой статьёй расходов — закрылся в 2020, продан в убыток, здание снесено. Урок для этого плана: консервативные цифры в финплане ниже — не перестраховка, а то, что подтверждается почти каждым похожим проектом в мире.</p>
+  </div>
+
+  <div class="callout good">
+    <span class="callout-label">Молитвенное служение — копируемая модель, не изобретение с нуля</span>
+    <p>Healing Rooms Ministries — сеть из 1200+ точек в 70 странах, бесплатно, полностью на волонтёрах: обучение — два четырёхнедельных потока в год плюс регулярные повышения квалификации, типичная смена волонтёра — раз в 4 недели на несколько часов. Pilgrim Coffee House во Франции держит молитвенную комнату прямо рядом с залом кафе, часть бариста сама несёт это служение. Готовый каркас для раздела «Молитва и служение» выше.</p>
+  </div>
+
+  <div class="callout good">
+    <span class="callout-label">Прямой прецедент для стен, исписанных Писанием</span>
+    <p>Coming King Sculpture Prayer Garden в Керрвилле, Техас — 120 000+ посетителей в год, бесплатно, 365 дней в году с 7 утра до полуночи. Вдоль маршрута к скульптуре — 77 стихов Библии, выгравированных на плитках на трёх языках: тот же приём «текст встроен в момент, который фотографируют», что заложен в этот план для стен кафе и сада.</p>
+  </div>
+
+  <p class="dek" style="margin-top:8px;">Ещё один урок в сторону: Museum of the Bible пережил скандал с контрабандными артефактами, и все его «свитки Мёртвого моря» оказались подделками. Если в проект попадут реликвии или заявления о подлинности — проверка происхождения обязательна до любых публичных заявлений.</p>
+</section>
+
+<section id="scenarios" class="tight">
+  <div class="section-head">
+    <p class="kicker">Масштаб</p>
+    <h2>Три сценария</h2>
+    <p class="dek">Локация ещё не выбрана — цифры ниже усреднены по острову; под конкретный участок турпоток нужно пересчитать.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>Economy</th><th>Standard</th><th>Flagship</th></tr></thead>
+      <tbody>
+        <tr><td class="muted">Высота статуи</td><td>6–8 м</td><td>10–12 м</td><td>15–18 м <span class="tag good">под порогом EIA 23 м</span></td></tr>
+        <tr><td class="muted">Посадочные места кафе</td><td>40–50</td><td>70–90</td><td>120–150 + зона мероприятий</td></tr>
+        <tr><td class="muted">Картины на библейские темы</td><td>8–10</td><td>15–20</td><td>25+</td></tr>
+        <tr><td class="muted">Двор</td><td>Пруд со статуей, простой навес</td><td>Пруд со статуей под навесом, ландшафт</td><td>Полноценный визит-центр, пруд, навес, вечерняя подсветка</td></tr>
+        <tr><td class="muted">Материалы</td><td>Мрамор в ключевых зонах, мягкая мебель</td><td>Мрамор, латунь, мягкая мебель везде</td><td>Премиум везде: мрамор, латунь, хрусталь, декор.свет</td></tr>
+        <tr class="total"><td>Итого CAPEX</td><td class="num tab-nums">≈$261k</td><td class="num tab-nums">≈$582k</td><td class="num tab-nums">≈$1.18M</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <svg class="svg-diagram" viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Схема зонирования участка: вход, площадь со статуей, кафе-павильон, галерея, парковка">
+    <rect x="1" y="1" width="918" height="258" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect x="40" y="40" width="230" height="180" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+    <circle cx="155" cy="110" r="34" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <text x="155" y="115" text-anchor="middle" font-size="11" fill="var(--accent)" font-weight="700">СТАТУЯ</text>
+    <text x="155" y="185" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Двор / площадь</text>
+    <rect x="300" y="40" width="200" height="90" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+    <text x="400" y="90" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Кафе-павильон</text>
+    <rect x="300" y="140" width="200" height="80" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+    <text x="400" y="184" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Галерея картин</text>
+    <rect x="530" y="40" width="150" height="180" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+    <text x="605" y="134" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Сувенирная зона /<tspan x="605" dy="16">события</tspan></text>
+    <rect x="710" y="40" width="170" height="180" rx="6" fill="none" stroke="var(--border)" stroke-dasharray="5,5"/>
+    <text x="795" y="134" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Парковка /<tspan x="795" dy="16">служебный въезд</tspan></text>
+    <text x="40" y="252" font-size="11" fill="var(--ink-soft)">Условная схема зонирования — не архитектурный проект</text>
+  </svg>
+</section>
+</main>
+
+<figure class="figure-bleed">
+  <img src="{{IMG_NIGHT}}" alt="Концепт-визуализация: статуя и кафе-павильон вечером, тёплая архитектурная подсветка, отражающий пруд" />
+  <figcaption>Вечерняя атмосфера — подсветка и пруд превращают площадь в самостоятельный повод приехать после заката</figcaption>
+</figure>
+
+<main class="wrap">
+<section id="finance">
+  <div class="section-head">
+    <p class="kicker">Деньги</p>
+    <h2>Финансовый план</h2>
+    <p class="dek">CAPEX — по трём сценариям. Операционка — детально на сценарии Standard как рабочем примере; Economy и Flagship считаются по той же логике в своём масштабе.</p>
+  </div>
+
+  <h3 style="font-size:18px;">CAPEX по фазам</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Фаза</th><th>Что входит</th><th class="num">Economy</th><th class="num">Standard</th><th class="num">Flagship</th></tr></thead>
+      <tbody>
+        <tr><td>1. Планирование</td><td class="muted">Юрструктура, проект, обязательные геотех/гидро изыскания, разрешения, проверка EIA-порога</td><td class="num tab-nums">$15k</td><td class="num tab-nums">$28k</td><td class="num tab-nums">$50k</td></tr>
+        <tr><td>2. Стройка + статуя + навес</td><td class="muted">Фундамент, павильон, статуя с ангелами, крытая колоннада над двором, пруд, дренаж</td><td class="num tab-nums">$150k</td><td class="num tab-nums">$335k</td><td class="num tab-nums">$690k</td></tr>
+        <tr><td>3. Интерьер и арт</td><td class="muted">Кухня, премиальная мебель и отделка, картины, сувенирная зона, декоративный свет</td><td class="num tab-nums">$42k</td><td class="num tab-nums">$98k</td><td class="num tab-nums">$196k</td></tr>
+        <tr><td>4. Запуск</td><td class="muted">Найм и обучение (включая координатора служения), маркетинг открытия, 3 мес. резерва</td><td class="num tab-nums">$20k</td><td class="num tab-nums">$45k</td><td class="num tab-nums">$90k</td></tr>
+        <tr><td>Резерв на непредвиденное (15%)</td><td class="muted">—</td><td class="num tab-nums">$34k</td><td class="num tab-nums">$76k</td><td class="num tab-nums">$154k</td></tr>
+        <tr class="total"><td>Итого</td><td></td><td class="num tab-nums">≈$261k</td><td class="num tab-nums">≈$582k</td><td class="num tab-nums">≈$1.18M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="dek" style="margin-top:10px;">Курс в модели: 1&nbsp;USD ≈ 36&nbsp;฿. Цифры выше уже учитывают премиальные материалы (мрамор, латунь, мягкая мебель — без дерева) и крытую колоннаду над двором — рост CAPEX относительно первой версии плана на ~15–17% по строкам «Стройка» и «Интерьер». Статья «Стройка + статуя» — по-прежнему самая мягкая цифра во всей таблице (см. раздел «Статуя» выше).</p>
+
+  <h3 style="font-size:18px; margin-top:44px;">Операционка — сценарий Standard, помесячно по годам</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th class="num">Год 1</th><th class="num">Год 2</th><th class="num">Год 3</th></tr></thead>
+      <tbody>
+        <tr><td class="muted">Кафе, чеков/день</td><td class="num tab-nums">80</td><td class="num tab-nums">150</td><td class="num tab-nums">200</td></tr>
+        <tr><td><strong>Выручка / мес</strong></td><td class="num tab-nums">875k&nbsp;฿</td><td class="num tab-nums">1.98M&nbsp;฿</td><td class="num tab-nums">2.99M&nbsp;฿</td></tr>
+        <tr><td class="muted">Себестоимость (COGS)</td><td class="num tab-nums">244k&nbsp;฿</td><td class="num tab-nums">536k&nbsp;฿</td><td class="num tab-nums">785k&nbsp;฿</td></tr>
+        <tr><td class="muted">OPEX (персонал, коммуналка, маркетинг, страхование, уход за статуей)</td><td class="num tab-nums">337k&nbsp;฿</td><td class="num tab-nums">434k&nbsp;฿</td><td class="num tab-nums">515k&nbsp;฿</td></tr>
+        <tr><td class="muted">+ координатор молитв. служения (частичная занятость)</td><td class="num tab-nums">22k&nbsp;฿</td><td class="num tab-nums">22k&nbsp;฿</td><td class="num tab-nums">22k&nbsp;฿</td></tr>
+        <tr class="total"><td>EBITDA / мес</td><td class="num tab-nums">272k&nbsp;฿ <span class="muted">(~$7.6k)</span></td><td class="num tab-nums">988k&nbsp;฿ <span class="muted">(~$27.4k)</span></td><td class="num tab-nums">1.67M&nbsp;฿ <span class="muted">(~$46.3k)</span></td></tr>
+        <tr><td>EBITDA / год</td><td class="num tab-nums">≈3.3M&nbsp;฿ (~$91k)</td><td class="num tab-nums">≈11.9M&nbsp;฿ (~$329k)</td><td class="num tab-nums">≈20.0M&nbsp;฿ (~$557k)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <svg class="svg-diagram" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Столбчатая диаграмма: выручка и EBITDA по годам 1-3, сценарий Standard">
+    <line x1="50" y1="300" x2="560" y2="300" stroke="var(--border)" stroke-width="1"/>
+    <rect x="60" y="226.5" width="36" height="73.5" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <rect x="104" y="275.3" width="36" height="24.7" fill="var(--good-bg)" stroke="var(--good)"/>
+    <text x="120" y="316" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Год 1</text>
+    <text x="78" y="216" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">10.5M</text>
+    <text x="122" y="265" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">3.3M</text>
+
+    <rect x="220" y="133.4" width="36" height="166.6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <rect x="264" y="215.1" width="36" height="84.9" fill="var(--good-bg)" stroke="var(--good)"/>
+    <text x="280" y="316" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Год 2</text>
+    <text x="238" y="123" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">23.8M</text>
+    <text x="282" y="205" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">11.9M</text>
+
+    <rect x="380" y="48.7" width="36" height="251.3" fill="var(--accent-soft)" stroke="var(--accent)"/>
+    <rect x="424" y="158" width="36" height="142" fill="var(--good-bg)" stroke="var(--good)"/>
+    <text x="440" y="316" text-anchor="middle" font-size="12" fill="var(--ink-soft)">Год 3</text>
+    <text x="398" y="38" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">35.9M</text>
+    <text x="442" y="148" text-anchor="middle" font-size="11" fill="var(--ink-soft)" class="tab-nums">20.0M</text>
+  </svg>
+  <div class="chart-legend">
+    <span><i style="background:var(--accent-soft); border:1px solid var(--accent);"></i>Выручка / год</span>
+    <span><i style="background:var(--good-bg); border:1px solid var(--good);"></i>EBITDA / год</span>
+  </div>
+
+  <div class="callout good" style="margin-top:32px;">
+    <span class="callout-label">Окупаемость</span>
+    <p>При этом (оптимистичном) сценарии роста накопленный EBITDA пересекает CAPEX Standard (≈21M&nbsp;฿ с учётом премиальных материалов и навеса) ближе к концу третьего года — окупаемость ≈2.5–3 года, чуть дольше, чем в компактной версии плана, потому что премиальная отделка подняла CAPEX сильнее, чем EBITDA. У Economy и Flagship похожая картина: масштаб почти пропорционально сдвигает и инвестиции, и отдачу, так что горизонт окупаемости не сильно зависит от выбранного сценария — выбор определяется скорее доступным капиталом и риск-аппетитом, чем скоростью возврата. Мировые аналоги выше (раздел «Мировые аналоги») говорят, что и это ещё оптимистичная вилка: Ark Encounter недобрал 27–34% от своего прогноза, так что реалистичный диапазон стоит держать в уме как 2.5–4 года, не меньше.</p>
+    <p><strong>Консервативный случай:</strong> если донаты, мерч и мероприятия так и не наберут заметный объём и место останется просто «кафе со статуей у входа» — кафе на 150–200 чеков/день в одиночку всё равно выходит на здоровую операционную маржу. Статуя и галерея — апсайд к выручке, не условие выживания бизнеса.</p>
+  </div>
+</section>
+</main>
+
+<main class="wrap">
+<section id="risks" class="tight">
+  <div class="section-head">
+    <p class="kicker">Ещё не закрыто</p>
+    <h2>Остальные риски</h2>
+  </div>
+  <div class="risk-list">
+    <div class="risk-row">
+      <p class="kicker">Культурная чувствительность</p>
+      <p class="risk-body">Закон о Сангхе 1962 криминализирует оскорбление буддизма/духовенства; буддизм плотно увязан с тайской нацидентичностью, миссионерская деятельность идёт через квоты Департамента религиозных дел. Позиционирование «конкурент Big Buddha по паломничеству» — рискованная рамка. Публичная поддержка местных властей и общины важнее маркетингового охвата.</p>
+    </div>
+    <div class="risk-row">
+      <p class="kicker">Выручка от «арт-объекта» не гарантирована</p>
+      <p class="risk-body">Big Buddha шёл к 1.5М посетителей в год не один год. Донаты, мерч и события в модели выше — апсайд поверх кафе, а не базовый сценарий. Год 1 в таблице сознательно консервативен по этой причине.</p>
+    </div>
+    <div class="risk-row">
+      <p class="kicker">Стоимость статуи</p>
+      <p class="risk-body">Самая слабо подтверждённая цифра во всём плане (см. раздел «Статуя»). Реальные сметы от тайских мастерских — до утверждения бюджета, не после.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="section-head">
+    <p class="kicker">Дальше</p>
+    <h2>Следующие шаги</h2>
+  </div>
+  <ol class="checklist">
+    <li><div><strong>Юрист по Foreign Business Act и Land Code</strong><br/><span class="muted" style="font-size:14px;">до подписания чего-либо — структура фонда и операционной компании, устав фонда под тайское большинство</span></div></li>
+    <li><div><strong>Геотехнические и гидрологические изыскания участка</strong><br/><span class="muted" style="font-size:14px;">обязательны, если участок на склоне или у леса — до начала архитектурного проекта, не после</span></div></li>
+    <li><div><strong>Сметы от 2–3 тайских скульптурных мастерских</strong><br/><span class="muted" style="font-size:14px;">под конкретную высоту и материал — снимает главную неопределённость финплана</span></div></li>
+    <li><div><strong>Выбор конкретного участка</strong><br/><span class="muted" style="font-size:14px;">и пересчёт турпотока/аренды под реальную локацию вместо среднеостровных цифр</span></div></li>
+    <li><div><strong>Архитектурная концепция</strong><br/><span class="muted" style="font-size:14px;">под выбранный сценарий, с проверкой порога EIA (23 м / 10 000 м²)</span></div></li>
+    <li><div><strong>Решение совета церкви по сценарию</strong><br/><span class="muted" style="font-size:14px;">Economy / Standard / Flagship — вопрос доступного капитала и риск-аппетита, не скорости окупаемости</span></div></li>
+  </ol>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 18px;"><strong style="color:var(--ink);">О цифрах.</strong> Юнит-экономика кафе, законодательство и прецеденты — из открытого ресёрча с указанием источника у каждого блока. Оценки CAPEX/OPEX/выручки — расчёт для планирования на основе этих данных, не заменяют смету от местного архитектора, подрядчика и юриста. Курс 1&nbsp;USD≈36&nbsp;฿. Составлено Claude (Anthropic), 2026-07-14.</p>
+    <p class="kicker" style="margin-bottom:10px; color:var(--ink-soft);">Источники</p>
+    <ul class="src-grid" style="margin:0; padding:0; list-style:none;">
+      <li>Statrys — Can a Foreigner Own a Company in Thailand? (2026)</li>
+      <li>Global Law Experts — FBA, Nominee Rules and BOI Incentives (2026)</li>
+      <li>ASEAN Briefing — Foreign Business Act Restricted Sectors</li>
+      <li>Siam Legal Library — Land Act 2497 §84–85</li>
+      <li>Mondaq — Can Foundations Own Land in Thailand</li>
+      <li>ThailandLawOnline — Land Code Act Translation</li>
+      <li>Coffeestics — Coffee Prices Thailand</li>
+      <li>ThailandRoutes — Daily Food &amp; Drink Costs 2026</li>
+      <li>SMERGERS — Businesses for Sale in Phuket</li>
+      <li>VantaInsights — Coffee Shop / Restaurant Profit Margins (2026)</li>
+      <li>FazWaz — Retail Spaces for Rent in Phuket</li>
+      <li>Jobsdb / ERI SalaryExpert — зарплаты Пхукет</li>
+      <li>Wikipedia — Phuket Big Buddha; Statue of Unity; Christ of Vũng Tàu</li>
+      <li>Phuket101 — Big Buddha; Wat Chalong</li>
+      <li>Khaosod English / Bangkok Post — оползень на участке Big Buddha, авг. 2024</li>
+      <li>Traveloka — Art in Paradise Pattaya</li>
+      <li>Sculptureshome / WhiteClouds — ориентиры стоимости статуй</li>
+      <li>Baker McKenzie — EIA-требования Таиланда, авг. 2025</li>
+      <li>ThemisPartner — Building Control Act</li>
+      <li>US State Dept 2023 / Christianity Today — религиозная свобода в Таиланде</li>
+    </ul>
+  </div>
+</footer>
+
+</div>
