@@ -28,6 +28,9 @@ for (const name of ["conservative", "base", "optimistic"]) {
     `  GOP        ${fmt(r.gop)} (${fmt(r.gopMargin)}%)\n` +
     `  EBITDA     ${fmt(r.ebitda)} (${fmt(r.ebitdaMargin)}%)\n` +
     `  Доходность на капитал ${fmt(r.yieldOnCost)}%  ← девелопмент целится в 8-12%\n` +
+    `  Площадь    ${Math.round(r.totalSqm)} м² (EIA ${r.eiaTriggered ? "СРАБАТЫВАЕТ" : "не срабатывает"})\n` +
+    `  CAPEX: доходные здания ${fmt(r.earningCapex)} / миссия ${fmt(r.missionCapex)} млн THB\n` +
+    `  Выручка: отель ${fmt(r.revenueParts.rooms)} ретрит ${fmt(r.revenueParts.retreat)} кафе ${fmt(r.revenueParts.cafe)} школа ${fmt(r.revenueParts.school)}\n` +
     `  IRR        ${r.irr === null ? "не окупается" : fmt(r.irr) + "%"}\n` +
     `  Окупаемость ${r.payback === null ? "никогда" : fmt(r.payback) + " лет"}\n` +
     `  Мультипл.  ${fmt(r.multiple)}x\n` +

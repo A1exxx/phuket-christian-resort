@@ -1,5 +1,5 @@
-/* Проверка гипотезы фазирования: если поток решает всё, а номера доходность не двигают —
-   имеет ли смысл строить арт-парк и кафе первыми, доказать трафик, и только потом отель? */
+/* Порядок стройки под утверждённый состав из шести зданий.
+   Вопрос: что строить первым, чтобы проект не утонул в капитале до первой выручки. */
 import fs from "node:fs";
 const src = fs.readFileSync("D:/church-cafe-phuket/model.js", "utf8");
 const w = {};
@@ -7,53 +7,70 @@ new Function("window", src)(w);
 const M = w.PhuketModel;
 const base = M.presets.base;
 
-function show(label, patch) {
+const OFF = { keys: 0, retreatRooms: 0, schoolSqm: 0, students: 0, tuition: 0 };
+
+function run(label, patch, note) {
   const r = M.compute({ ...base, ...patch });
   console.log(
-    label.padEnd(52) +
-    `CAPEX $${(r.capex / 36).toFixed(1)}M`.padStart(13) +
-    `дох ${r.yieldOnCost.toFixed(1)}%`.padStart(11) +
-    `IRR ${r.irr === null ? "н/д" : r.irr.toFixed(1) + "%"}`.padStart(11) +
-    `окуп ${r.payback === null ? "никогда" : r.payback.toFixed(1)}`.padStart(14)
+    label.padEnd(46) +
+    `$${(r.capex / 36).toFixed(1)}M`.padStart(9) +
+    `${r.yieldOnCost.toFixed(1)}%`.padStart(9) +
+    `${r.irr === null ? "н/д" : r.irr.toFixed(1) + "%"}`.padStart(9) +
+    `${r.payback === null ? "никогда" : r.payback.toFixed(1)}`.padStart(10) +
+    `${Math.round(r.totalSqm)}`.padStart(8) +
+    (note ? "  " + note : "")
   );
   return r;
 }
 
-console.log("=== ФАЗА 1: только арт-парк + кафе, без отеля ===");
-console.log("(проверяем при разном потоке — сколько нужно людей, чтобы фаза 1 сама себя окупала)\n");
-console.log("СЦЕНАРИЙ".padEnd(52) + "CAPEX".padStart(13) + "ДОХОДН".padStart(11) + "IRR".padStart(11) + "ОКУП".padStart(14));
-console.log("-".repeat(101));
+console.log("СОСТАВ".padEnd(46) + "CAPEX".padStart(9) + "ДОХОДН".padStart(9) + "IRR".padStart(9) + "ОКУП".padStart(10) + "М²".padStart(8));
+console.log("-".repeat(97));
 
-const p1 = { keys: 0, landRai: 4, landPricePerRai: 12, artBudget: 45, cafeSqm: 900 };
-for (const v of [400, 600, 1000, 1500, 2000, 2700]) {
-  show(`Фаза 1, ${v} посетителей/день`, { ...p1, visitorsDay: v });
-}
+run("Всё сразу (6 зданий)", {});
+run("Без школы", { schoolSqm: 0, students: 0, tuition: 0 });
+run("Без отеля", { keys: 0 });
+run("Без отеля и школы", { keys: 0, schoolSqm: 0, students: 0, tuition: 0 });
+run("Только магнит: арт+кафе+церковь", { ...OFF, officeSqm: 0 });
+run("Магнит + офис церкви", OFF);
+run("Магнит + ретрит", { ...OFF, retreatRooms: 24 });
+run("Магнит + ретрит + школа", { keys: 0 });
 
-console.log("\n=== Фаза 1 экономнее: арт-парк 25M вместо 45M ===");
-for (const v of [600, 1000, 1500, 2700]) {
-  show(`Фаза 1 эконом, ${v} посетителей/день`, { ...p1, artBudget: 25, visitorsDay: v });
-}
+console.log("\n=== ТО ЖЕ ПРИ ПОТОКЕ 1500/ДЕНЬ (реалистичная цель) ===");
+console.log("СОСТАВ".padEnd(46) + "CAPEX".padStart(9) + "ДОХОДН".padStart(9) + "IRR".padStart(9) + "ОКУП".padStart(10) + "М²".padStart(8));
+console.log("-".repeat(97));
+const V = { visitorsDay: 1500 };
+run("Всё сразу (6 зданий)", V);
+run("Без школы", { ...V, schoolSqm: 0, students: 0, tuition: 0 });
+run("Магнит + ретрит", { ...V, ...OFF, retreatRooms: 24 });
+run("Магнит + ретрит + школа", { ...V, keys: 0 });
+run("Только магнит: арт+кафе+церковь", { ...V, ...OFF, officeSqm: 0 });
 
-console.log("\n=== ФАЗА 2: добавляем отель к доказанному потоку ===");
-console.log("(земля уже куплена в фазе 1, арт-парк построен — считаем полный комплекс)\n");
-for (const [label, patch] of [
-  ["Полный комплекс, поток 1000", { visitorsDay: 1000 }],
-  ["Полный комплекс, поток 1500", { visitorsDay: 1500 }],
-  ["Полный комплекс, поток 2000", { visitorsDay: 2000 }],
-  ["Полный комплекс, поток 2700", { visitorsDay: 2700 }],
-  ["Полный, поток 2000 + ADR 11k + загр 70%", { visitorsDay: 2000, adr: 11000, occupancy: 70 }],
-]) show(label, patch);
-
-console.log("\n=== ГЛАВНЫЙ ВОПРОС: при каком потоке базовый комплекс выходит на 10% доходности? ===");
-let found = null;
-for (let v = 200; v <= 4000; v += 25) {
-  const r = M.compute({ ...base, visitorsDay: v });
-  if (r.yieldOnCost >= 10 && !found) { found = { v, r }; break; }
+console.log("\n=== ВКЛАД КАЖДОГО ЗДАНИЯ (базовый сценарий, поток 600) ===");
+const full = M.compute(base);
+const blocks = [
+  ["Отель", { keys: 0 }],
+  ["Ретрит-центр", { retreatRooms: 0 }],
+  ["Школа", { schoolSqm: 0, students: 0, tuition: 0 }],
+  ["Церковь", { churchSqm: 0 }],
+  ["Офис церкви", { officeSqm: 0 }],
+  ["Кафе", { cafeSqm: 0 }],
+];
+console.log("ЗДАНИЕ".padEnd(20) + "БЕЗ НЕГО ДОХОДН".padStart(17) + "ЭФФЕКТ".padStart(10) + "ВЕРДИКТ".padStart(24));
+console.log("-".repeat(71));
+const rows = blocks.map(([name, patch]) => {
+  const r = M.compute({ ...base, ...patch });
+  return { name, y: r.yieldOnCost, delta: r.yieldOnCost - full.yieldOnCost };
+});
+rows.sort((a, b) => b.delta - a.delta);
+for (const r of rows) {
+  const verdict = r.delta > 0.4 ? "тянет доходность вниз" : r.delta < -0.4 ? "создаёт доходность" : "почти нейтрально";
+  console.log(
+    r.name.padEnd(20) +
+    `${r.y.toFixed(1)}%`.padStart(17) +
+    `${r.delta >= 0 ? "+" : ""}${r.delta.toFixed(1)}`.padStart(10) +
+    verdict.padStart(24)
+  );
 }
-if (found) {
-  console.log(`  Нужно ${found.v} посетителей в день (${(found.v * 365 / 1000).toFixed(0)} тыс. в год).`);
-  console.log(`  Ориентиры: Big Buddha Пхукет ~1000/день, Белый храм Чианг Рай ~2700/день.`);
-  console.log(`  → цель ${found.v < 1000 ? "ниже Big Buddha, реалистично" : found.v < 2700 ? "между Big Buddha и Белым храмом — амбициозно, но не фантастика" : "выше Белого храма — крайне амбициозно"}`);
-} else {
-  console.log("  Не достигается даже при 4000 посетителей/день.");
-}
+console.log(`\nБаза целиком: ${full.yieldOnCost.toFixed(1)}%`);
+console.log("«Тянет вниз» = без этого здания доходность выше. Это не значит «не строить» —");
+console.log("значит, здание финансируется миссией, а не ожиданием возврата.");
