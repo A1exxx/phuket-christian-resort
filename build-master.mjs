@@ -36,6 +36,7 @@ const MAP = {
   IMG_C2: ["v2-C2-neo-artpark", 900],
   IMG_C3: ["v2-C3-neo-cafe", 900],
   IMG_SITE_SAT: ["site/site-satellite-real", 1400],
+  IMG_SITE_CONCEPT: ["site/site-statue-concept", 1400],
   IMG_SITE_NOW1: ["site/site-photo-now1", 1100],
   IMG_SITE_NOW2: ["site/site-photo-now2", 1100],
   IMG_SITE_AERIAL: ["site/site-aerial-v42", 1400],
