@@ -5,11 +5,15 @@ import { execFileSync } from "node:child_process";
 const DIR = "D:/church-cafe-phuket";
 const IMG = path.join(DIR, "images");
 
-/* Сжимаем PNG в JPEG перед встраиванием — иначе артефакт весит десятки мегабайт. */
+/* Сжимаем в JPEG перед встраиванием — иначе артефакт весит десятки мегабайт.
+   Исходник может быть .png (генерации) или .jpg (реальные фото участка);
+   выход всегда отдельный __web.jpg, чтобы не перезаписать jpg-исходник. */
 function jpeg(name, width) {
-  const src = path.join(IMG, name + ".png");
-  const out = path.join(IMG, name + ".jpg");
-  if (!fs.existsSync(src)) throw new Error("нет исходника: " + src);
+  const srcPng = path.join(IMG, name + ".png");
+  const srcJpg = path.join(IMG, name + ".jpg");
+  const src = fs.existsSync(srcPng) ? srcPng : srcJpg;
+  if (!fs.existsSync(src)) throw new Error("нет исходника: " + srcPng + " / " + srcJpg);
+  const out = path.join(IMG, name + "__web.jpg");
   const needsRebuild = !fs.existsSync(out) || fs.statSync(src).mtimeMs > fs.statSync(out).mtimeMs;
   if (needsRebuild) {
     execFileSync("ffmpeg", ["-y", "-i", src, "-vf", `scale=${width}:-2`, "-q:v", "4", out], { stdio: "ignore" });
@@ -30,7 +34,11 @@ const MAP = {
   IMG_B3: ["v2-B3-aman-cafe", 900],
   IMG_C1: ["v2-C1-neo-aerial", 900],
   IMG_C2: ["v2-C2-neo-artpark", 900],
-  IMG_C3: ["v2-C3-neo-cafe", 900]
+  IMG_C3: ["v2-C3-neo-cafe", 900],
+  IMG_SITE_NOW1: ["site/site-photo-now1", 1100],
+  IMG_SITE_NOW2: ["site/site-photo-now2", 1100],
+  IMG_SITE_AERIAL: ["site/site-aerial-v42", 1400],
+  IMG_SITE_CHURCH: ["site/site-church-interior", 1400]
 };
 
 let html = fs.readFileSync(path.join(DIR, "master.template.html"), "utf8");
