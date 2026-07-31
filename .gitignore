@@ -5,3 +5,6 @@ master-plan.html
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Тайлы спутника — промежуточные, в репо не нужны (склейка уже сохранена)
+images/site/tiles/
