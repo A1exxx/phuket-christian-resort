@@ -10,7 +10,7 @@ export const SLOTS = {
   /* ── Трансформации реальных фото (провайдер google, нужен биллинг) ── */
 
   "statue-water": {
-    provider: "google",
+    provider: "openrouter",
     ref: `${PHOTOS}/photo_6291971576924147947_y.jpg`,
     out: "images/site/site-statue-water.png",
     ar: "16:9",
@@ -19,7 +19,7 @@ export const SLOTS = {
   },
 
   "cafe-entrance": {
-    provider: "google",
+    provider: "openrouter",
     ref: `${PHOTOS}/photo_6291971576924147945_y.jpg`,
     out: "images/site/site-cafe-entrance.png",
     ar: "16:9",
@@ -28,7 +28,7 @@ export const SLOTS = {
   },
 
   "retreat": {
-    provider: "google",
+    provider: "openrouter",
     ref: `${PHOTOS}/photo_6291971576924147948_y.jpg`,
     out: "images/site/site-retreat.png",
     ar: "16:9",
@@ -37,7 +37,7 @@ export const SLOTS = {
   },
 
   "panorama": {
-    provider: "google",
+    provider: "openrouter",
     ref: `${PHOTOS}/photo_6291971576924147949_y.jpg`,
     out: "images/site/site-panorama.png",
     ar: "16:9",
@@ -46,7 +46,7 @@ export const SLOTS = {
   },
 
   "masterplan-real": {
-    provider: "google",
+    provider: "openrouter",
     ref: "images/site/site-satellite-real.png",
     out: "images/site/site-masterplan-real.png",
     ar: "16:9",

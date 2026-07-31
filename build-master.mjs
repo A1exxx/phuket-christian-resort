@@ -23,7 +23,7 @@ function jpeg(name, width) {
 }
 
 const MAP = {
-  IMG_HERO:    ["v2-A1-med-aerial", 1500],
+  IMG_HERO:    ["site/site-statue-water", 1500],
   IMG_ARTPARK: ["v2-C2-neo-artpark", 1400],
   IMG_CAFE:    ["v2-A3-med-cafe", 1400],
   IMG_A1: ["v2-A1-med-aerial", 900],
@@ -35,11 +35,15 @@ const MAP = {
   IMG_C1: ["v2-C1-neo-aerial", 900],
   IMG_C2: ["v2-C2-neo-artpark", 900],
   IMG_C3: ["v2-C3-neo-cafe", 900],
-  IMG_SITE_SAT: ["site/site-satellite-real", 1400],
-  IMG_SITE_CONCEPT: ["site/site-statue-concept", 1400],
+  IMG_SITE_SAT: ["site/site-satellite-real", 1300],
   IMG_SITE_NOW1: ["site/site-photo-now1", 1100],
   IMG_SITE_NOW2: ["site/site-photo-now2", 1100],
-  IMG_SITE_AERIAL: ["site/site-aerial-v42", 1400],
+  IMG_SITE_NOW3: ["site/site-photo-now3", 1100],
+  IMG_SITE_STATUE: ["site/site-statue-water", 1500],
+  IMG_SITE_CAFE: ["site/site-cafe-entrance", 1100],
+  IMG_SITE_RETREAT: ["site/site-retreat", 1100],
+  IMG_SITE_PANORAMA: ["site/site-panorama", 1400],
+  IMG_SITE_MASTER: ["site/site-masterplan-real", 1300],
   IMG_SITE_CHURCH: ["site/site-church-interior", 1400]
 };
 
