@@ -54,6 +54,48 @@ export const SLOTS = {
     prompt: "Transform this real satellite photo into a photorealistic aerial architectural rendering of a Christian destination, PRESERVING the exact lake shape, the curving road along the north-west shore, the surrounding buildings, farms and the orange-roofed village at the east. On the site around the lake: the long dark-roofed buildings on the NORTH shore become white church office and ministry buildings; a modest white protestant church with a plain cross stands among them; the west corner near the road becomes a paved entrance plaza with parking and a white 3-story cafe at the water edge; a white statue of Jesus with outstretched arms stands in the shallow water just off the WESTERN shore near the cafe, NOT in the middle; the small pavilions at the SOUTH shore become a row of white lakefront retreat pavilions; a landscaped walking promenade rings the lake with small white sculptures; the south-east corner near the village gets a small school campus with its own gate. Golden hour warm light, long soft shadows, calm reflective water. Keep everything outside the lake area unchanged."
   },
 
+  /* ── Здания по утверждённому списку (стиль-референс = главный кадр) ── */
+
+  "church-exterior": {
+    provider: "openrouter",
+    ref: "images/site/site-statue-water.png",
+    out: "images/site/bld-church.png",
+    title: "Церковь · 700 м², зал на 300 мест, звонница",
+    prompt: "Using the reference image only as the architectural style guide (white stone, simple protestant forms, tropical lake at golden hour), create a photorealistic visualization of the MAIN CHURCH of this ensemble: a modern protestant church seating 300 people, about 700 square meters, on the lakeside lawn. One clean white gable volume with tall narrow windows, a covered entrance porch, and a slender bell tower with a plain empty cross — the tallest vertical of the complex. Stone plaza in front with low walls carved with Bible verse calligraphy, frangipani trees, a few people walking to the entrance. Mirror reflection in the calm lake, warm golden hour light. Wide architectural shot."
+  },
+
+  "church-office": {
+    provider: "openrouter",
+    ref: "images/site/site-statue-water.png",
+    out: "images/site/bld-office.png",
+    title: "Офис церкви · 250 м², 5 кабинетов, комнаты для бесед",
+    prompt: "Using the reference image only as the architectural style guide (white stone, simple protestant forms, tropical greenery, golden hour), create a photorealistic visualization of a modest two-story church office building of about 250 square meters: five offices, a meeting room and two quiet prayer-and-counseling rooms. Clean white walls, wooden shutters, a shaded veranda with rattan chairs where two people talk over coffee, tropical garden with frangipani, gravel path, warm evening light. The lake glimpsed in the background. Human-scale, welcoming, not grand."
+  },
+
+  "hotel-exterior": {
+    provider: "openrouter",
+    ref: "images/site/site-statue-water.png",
+    out: "images/site/bld-hotel.png",
+    title: "Отель · 3 000 м², 30 номеров, лобби, спа, бассейн",
+    prompt: "Using the reference image only as the architectural style guide (white stone, simple clean forms, tropical lake at golden hour), create a photorealistic visualization of a boutique lakeside hotel of this ensemble: 30 rooms in low two-story white wings totalling about 3000 square meters, open-air lobby pavilion with a high wooden roof, an infinity-edge pool facing the lake, a small spa pavilion among frangipani trees, balconies with lake views, warm lights in the windows, guests by the pool at sunset. Wide architectural shot from the water side."
+  },
+
+  "school-exterior": {
+    provider: "openrouter",
+    ref: "images/site/site-statue-water.png",
+    out: "images/site/bld-school.png",
+    title: "Учебный корпус · 1 200 м², 8 классов, отдельный въезд",
+    prompt: "Using the reference image only as the architectural style guide (white stone, simple protestant forms, tropical greenery), create a photorealistic visualization of a school campus of this ensemble: a two-story white education building of about 1200 square meters with eight classrooms, an assembly hall wing, a small library and a canteen, plus a shaded playground where children play. CRITICALLY: the campus has ITS OWN gated entrance with a driveway, a low perimeter fence with a dense hedge, and a tree buffer separating it from the rest of the site — a visibly self-contained safe zone. Bright fresh morning light, green lawns."
+  },
+
+  "artpark-alley": {
+    provider: "openrouter",
+    ref: "images/site/site-statue-water.png",
+    out: "images/site/bld-artpark.png",
+    title: "Арт-парк · аллея малых объектов и фотозон",
+    prompt: "Using the reference image only as the style guide (white marble, tropical lake at golden hour), create a photorealistic visualization of the sculpture walk of this ensemble: a stone promenade along the lake with a sequence of small white marble art objects and photo spots — an angel with detailed feathered wings, a pair of large praying hands, an open stone book with carved verses, a shepherd with two sheep, a dove fountain, and a white arch framing the lake view like a picture frame. Lanterns, tropical flowers, benches; visitors photographing each other at the objects; the big statue on the water visible far across the lake. Warm golden hour."
+  },
+
   /* ── Генерации с нуля (провайдер cloudflare, бесплатно) ── */
 
   "aerial-concept": {

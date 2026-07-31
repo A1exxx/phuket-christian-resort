@@ -44,7 +44,12 @@ const MAP = {
   IMG_SITE_RETREAT: ["site/site-retreat", 1100],
   IMG_SITE_PANORAMA: ["site/site-panorama", 1400],
   IMG_SITE_MASTER: ["site/site-masterplan-real", 1300],
-  IMG_SITE_CHURCH: ["site/site-church-interior", 1400]
+  IMG_SITE_CHURCH: ["site/site-church-interior", 1400],
+  IMG_BLD_CHURCH: ["site/bld-church", 1100],
+  IMG_BLD_OFFICE: ["site/bld-office", 1100],
+  IMG_BLD_HOTEL: ["site/bld-hotel", 1100],
+  IMG_BLD_SCHOOL: ["site/bld-school", 1100],
+  IMG_BLD_ARTPARK: ["site/bld-artpark", 1100]
 };
 
 let html = fs.readFileSync(path.join(DIR, "master.template.html"), "utf8");
